@@ -3,14 +3,11 @@ package com.example.audiobook;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
-import android.util.Log;
 import android.view.accessibility.AccessibilityManager;
 import android.widget.ListView;
 import android.widget.Toast;
 
-
 import androidx.appcompat.app.AppCompatActivity;
-
 
 import java.util.Locale;
 
@@ -66,19 +63,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        mTTS.stop();
-    }
-
     @Override
     protected void onStop() {
         super.onStop();
         mTTS.stop();
         mTTS.shutdown();
-
     }
 
     @Override

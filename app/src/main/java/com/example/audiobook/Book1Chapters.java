@@ -1,5 +1,6 @@
 package com.example.audiobook;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -20,6 +21,8 @@ ListView book1Chapter1List;
             switch (position){
                 case 0:
                     Toast.makeText(getApplicationContext(), "You selected chapter 1", Toast.LENGTH_SHORT).show();
+                    Intent MusicPlayerinter=new Intent(Book1Chapters.this,Book1Chapter1audio.class);
+                    startActivity(MusicPlayerinter);
                     break;
                 case 1:
                     Toast.makeText(getApplicationContext(), "You selected chapter 2", Toast.LENGTH_SHORT).show();

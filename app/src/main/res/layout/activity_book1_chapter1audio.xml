@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Book1Chapter1audio">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="194dp"
+        android:layout_height="127dp"
+        android:layout_marginTop="16dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/book_1image" />
+
+    <ImageButton
+        android:id="@+id/pauseaudio"
+        android:layout_width="68dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/stopaudio"
+        app:srcCompat="@drawable/pauseaudio" />
+
+    <ImageButton
+        android:id="@+id/playaudio"
+        android:layout_width="70dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/pauseaudio"
+        app:layout_constraintEnd_toStartOf="@+id/pauseaudio"
+        app:layout_constraintHorizontal_bias="0.477"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/playaudio" />
+
+    <ImageButton
+        android:id="@+id/stopaudio"
+        android:layout_width="72dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="228dp"
+        app:layout_constraintStart_toEndOf="@+id/pauseaudio"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:srcCompat="@drawable/stopaudio" />
+</androidx.constraintlayout.widget.ConstraintLayout>
