@@ -4,18 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Book1Chapters">
 
     <ListView
-        android:id="@+id/Bookname"
+        android:id="@+id/Book1ChapterList"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="24dp"
-        android:entries="@array/BookName"
-        android:fadeScrollbars="true"
+        android:entries="@array/Book1ChaptersList"
         android:scrollbars="vertical"
-        android:textAlignment="center"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Audio Book</string>
+    <string-array name="BookName">
+        <item>Book 1</item>
+        <item>Book 2</item>
+    </string-array>
+
+    <string-array name="Book1ChaptersList">
+        <item>Chapter 1</item>
+        <item>Chapter 2</item>
+    </string-array>
+
 </resources>
