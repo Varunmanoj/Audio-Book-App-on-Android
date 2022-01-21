@@ -10,9 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AudioBook">
         <activity
-            android:name=".Book1Chapters"
+            android:name=".Book2ChapterList"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+            android:label="Book 2"
+            android:parentActivityName=".MainActivity"
+            />
+        <activity
+            android:name=".Book1Chapters"
+            android:label="Book 1"
+            android:exported="false"
+
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

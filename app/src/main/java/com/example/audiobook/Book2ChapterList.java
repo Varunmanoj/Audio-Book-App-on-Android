@@ -6,17 +6,16 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Book1Chapters extends AppCompatActivity {
-
-ListView book1Chapter1List;
+public class Book2ChapterList extends AppCompatActivity {
+ListView Book2ChapterList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_book1_chapters);
+        setContentView(R.layout.activity_book2_chapter_list);
         
 //        Link Java and XML
-        book1Chapter1List=findViewById(R.id.Book1ChapterList);
-        book1Chapter1List.setOnItemClickListener((parent, view, position, id) -> {
+        Book2ChapterList=findViewById(R.id.Book2ChapterList);
+        Book2ChapterList.setOnItemClickListener((parent, view, position, id) -> {
             switch (position){
                 case 0:
                     Toast.makeText(getApplicationContext(), "You selected chapter 1", Toast.LENGTH_SHORT).show();
