@@ -60,8 +60,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
 //                Release resources if audio tts is not speaking
-        mTTS.stop();
-        mTTS.shutdown();
+        if (!mTTS.isSpeaking()) {
+            mTTS.stop();
+            mTTS.shutdown();
+        }
     }
 
     @Override
