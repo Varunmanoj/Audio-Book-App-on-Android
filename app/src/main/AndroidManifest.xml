@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.audiobook">
-
+<queries>
+    <intent>
+        <action android:name="android.intent.action.TTS_SERVICE" />
+    </intent>
+</queries>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,12 +20,12 @@
         <activity
             android:name=".Book2ChapterList"
             android:exported="false"
-            android:label="Book 2"
+            android:label="@string/Book2"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Book1Chapters"
             android:exported="false"
-            android:label="Book 1"
+            android:label="@string/Book1"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
