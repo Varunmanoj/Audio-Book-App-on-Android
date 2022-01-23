@@ -3,7 +3,6 @@ package com.example.audiobook;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
-import android.view.accessibility.AccessibilityManager;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -23,7 +22,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Bookname = findViewById(R.id.Bookname);
-
+//        Get  System Language of the system
+        String lang = Locale.getDefault().getLanguage();
 //        Create on click for list item
         Bookname.setOnItemClickListener((parent, view, position, id) -> {
 
