@@ -15,8 +15,14 @@
         <item>Chapter 2</item>
         <item>Chapter 3</item>
     </string-array>
+
     <string name="Book1">Book 1</string>
     <string name="Book2">Book 2</string>
+
+    <!--    Book1 Chapter Audio-->
+    <string name="Chapter1audio">Chapter 1</string>
+    <string name="Chapter2audio">Chapter 2</string>
+    <string name="Playaudio">Play Audio</string>
 
 
 </resources>

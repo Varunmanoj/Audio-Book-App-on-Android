@@ -23,20 +23,21 @@ public class MainActivity extends AppCompatActivity {
 
         Bookname = findViewById(R.id.Bookname);
 //        Get  System Language of the system
-        String lang = Locale.getDefault().getLanguage();
+        String lang = Locale.getDefault().getLanguage(); //returns en for english and hi for hindi
 //        Create on click for list item
+
         Bookname.setOnItemClickListener((parent, view, position, id) -> {
 
-//            Extract the text selected  by user in string
 //                Make the app self voicing
+//                Extract the text selected  by user in string
             String Readtext = Bookname.getItemAtPosition(position).toString();
 
-            mTTS = new TextToSpeech(getApplicationContext(), status -> {
+            mTTS = new TextToSpeech(this, status -> {
                 if (status == TextToSpeech.SUCCESS) {
                     mTTS.setLanguage(Locale.ENGLISH);
                 }
 //                    Speak button click
-                mTTS.speak(Readtext,TextToSpeech.QUEUE_FLUSH,null);
+                mTTS.speak(Readtext, TextToSpeech.QUEUE_FLUSH, null);
 
             });
 
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 
     @Override
     protected void onStop() {

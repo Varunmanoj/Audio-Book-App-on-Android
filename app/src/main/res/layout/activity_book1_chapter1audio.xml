@@ -11,6 +11,7 @@
         android:layout_width="194dp"
         android:layout_height="127dp"
         android:layout_marginTop="16dp"
+        android:contentDescription="@string/Playaudio"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"

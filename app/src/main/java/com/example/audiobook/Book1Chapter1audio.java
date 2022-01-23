@@ -1,11 +1,11 @@
 package com.example.audiobook;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.view.View;
+import android.util.Log;
 import android.widget.ImageButton;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Book1Chapter1audio extends AppCompatActivity {
     ImageButton Playaudio;
@@ -23,16 +23,40 @@ public class Book1Chapter1audio extends AppCompatActivity {
         Stopaudio=findViewById(R.id.stopaudio);
 
         Playaudio.setOnClickListener(v -> {
-        if (mp==null){
-            mp=MediaPlayer.create(this,R.raw.song);
-        }
-        mp.start();
+            if (mp == null) {
+                mp = MediaPlayer.create(this, R.raw.song);
+                mp.setOnCompletionListener(mp -> stopaudio());
+            }
+            mp.start();
         });
         Pauseaudio.setOnClickListener(v -> {
-      mp.pause();
+            if (mp != null) {
+                mp.pause();
+            }
         });
         Stopaudio.setOnClickListener(v -> {
-      mp.stop();
+            stopaudio();
         });
+    }
+
+    private void stopaudio() {
+        if (mp != null) {
+            mp.stop();
+            mp.release();
+            mp = null;
+            Log.d("mediaplayer", "released media player");
+        }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        stopaudio();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        stopaudio();
     }
 }
