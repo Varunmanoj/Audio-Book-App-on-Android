@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/customshape"
+    android:background="@color/BackgroundColor"
     tools:context=".Book1Chapters">
 
     <ListView
@@ -14,7 +14,6 @@
         android:entries="@array/Book1ChaptersList"
         android:scrollbars="vertical"
         android:visibility="visible"
-        android:cacheColorHint="@color/purple_200"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
