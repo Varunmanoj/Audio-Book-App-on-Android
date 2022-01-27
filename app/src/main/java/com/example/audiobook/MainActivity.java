@@ -1,7 +1,10 @@
 package com.example.audiobook;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.speech.tts.TextToSpeech;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -16,10 +19,15 @@ public class MainActivity extends AppCompatActivity {
     String Readtext;
     TextToSpeech mTTS;
 
+    //    Vibration
+    Vibrator vibrator;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Vibrate on click
+        Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
 
         Bookname = findViewById(R.id.Bookname);
 //        Get  System Language of the system
@@ -40,7 +48,14 @@ public class MainActivity extends AppCompatActivity {
                 mTTS.speak(Readtext, TextToSpeech.QUEUE_FLUSH, null);
 
             });
-
+//Vibrate on click
+            if (Build.VERSION.SDK_INT >= 26) {
+//    Perform forAPI  26 and above
+                vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE));
+            } else {
+//    Perform for API 26 and below
+                vibrator.vibrate(200);
+            }
 //                Create List Items  clickable
             switch (position) {
                 case 0:
@@ -65,15 +80,6 @@ public class MainActivity extends AppCompatActivity {
         if (!mTTS.isSpeaking()) {
             mTTS.stop();
             mTTS.shutdown();
-        }
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-//        Release resources if audio tts is not speaking
-        if (!mTTS.isSpeaking()){
-            mTTS.stop();
         }
     }
 

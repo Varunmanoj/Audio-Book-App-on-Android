@@ -1,7 +1,10 @@
 package com.example.audiobook;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.speech.tts.TextToSpeech;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -22,6 +25,9 @@ public class Book1Chapters extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book1_chapters);
 
+        //Vibrate on click
+        Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+
 //        Link Java and XML
         book1Chapter1List = findViewById(R.id.Book1ChapterList);
         book1Chapter1List.setOnItemClickListener((parent, view, position, id) -> {
@@ -37,6 +43,14 @@ public class Book1Chapters extends AppCompatActivity {
                 mTTS.speak(Readtext, TextToSpeech.QUEUE_FLUSH, null);
             });
 
+            //Vibrate on click
+            if (Build.VERSION.SDK_INT >= 26) {
+//    Perform forAPI  26 and above
+                vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE));
+            } else {
+//    Perform for API 26 and below
+                vibrator.vibrate(200);
+            }
             //Click Listener for items
             switch (position) {
                 case 0:
