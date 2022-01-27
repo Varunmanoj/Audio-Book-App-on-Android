@@ -13,12 +13,13 @@
         android:layout_height="127dp"
         android:layout_marginTop="16dp"
         android:contentDescription="@string/Playaudio"
+        android:scaleType="centerInside"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/book_1image" />
+        app:srcCompat="@drawable/a_crismesccarol" />
 
     <ImageButton
         android:id="@+id/pauseaudio"
