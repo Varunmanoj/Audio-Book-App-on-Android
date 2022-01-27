@@ -1,7 +1,9 @@
 package com.example.audiobook;
 
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.util.Log;
 import android.widget.ImageButton;
@@ -26,6 +28,15 @@ public class Book1Chapter1audio extends AppCompatActivity {
         Stopaudio = findViewById(R.id.stopaudio);
 
         Playaudio.setOnClickListener(v -> {
+            //Vibrate on click
+            if (Build.VERSION.SDK_INT >= 26) {
+//    Perform forAPI  26 and above
+                vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE));
+            } else {
+//    Perform for API 26 and below
+                vibrator.vibrate(200);
+            }
+
             if (mp == null) {
                 mp = MediaPlayer.create(this, R.raw.dc_title);
                 mp.setOnCompletionListener(mp -> stopaudio());
@@ -33,11 +44,29 @@ public class Book1Chapter1audio extends AppCompatActivity {
             mp.start();
         });
         Pauseaudio.setOnClickListener(v -> {
+            //Vibrate on click
+            if (Build.VERSION.SDK_INT >= 26) {
+//    Perform forAPI  26 and above
+                vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE));
+            } else {
+//    Perform for API 26 and below
+                vibrator.vibrate(200);
+            }
+
             if (mp != null) {
                 mp.pause();
             }
         });
         Stopaudio.setOnClickListener(v -> {
+            //Vibrate on click
+            if (Build.VERSION.SDK_INT >= 26) {
+//    Perform forAPI  26 and above
+                vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE));
+            } else {
+//    Perform for API 26 and below
+                vibrator.vibrate(200);
+            }
+
             stopaudio();
         });
     }
