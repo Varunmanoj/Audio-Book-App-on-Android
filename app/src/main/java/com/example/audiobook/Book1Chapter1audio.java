@@ -11,7 +11,6 @@ import android.widget.SeekBar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -52,7 +51,7 @@ public class Book1Chapter1audio extends AppCompatActivity {
         });
         ListChapters.setOnClickListener(v -> {
             Vibrate();
-            stopaudio();
+            playlist();
         });
     }
 
@@ -87,36 +86,27 @@ public class Book1Chapter1audio extends AppCompatActivity {
         }
     }
 
-    public void stopaudio() {
+    public void playlist() {
             Intent MovebackIntent=new Intent(this,Book1Chapters.class);
             startActivity(MovebackIntent);
-            if (mp.isPlaying()){
-                try {
-                    mp.stop();
-                }
-                catch (IllegalStateException e){
-                    e.printStackTrace();
-                }
-                mp.release();
-                mp=null;
-            }
+
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        stopaudio();
+
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        stopaudio();
+
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        stopaudio();
+
     }
 }
