@@ -1,83 +1,111 @@
 package com.example.audiobook;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
-import android.util.Log;
 import android.widget.ImageButton;
+import android.widget.SeekBar;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.io.IOException;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Book1Chapter1audio extends AppCompatActivity {
     ImageButton Playaudio;
     ImageButton Pauseaudio;
-    ImageButton Stopaudio;
+    ImageButton ListChapters;
     MediaPlayer mp;
+    SeekBar Audioprog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book1_chapter1audio);
-//Vibrate on click
-        Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
 
-//        Link Java and XML
+        //        Link Java and XML
         Playaudio = findViewById(R.id.playaudio);
         Pauseaudio = findViewById(R.id.pauseaudio);
-        Stopaudio = findViewById(R.id.stopaudio);
+        ListChapters = findViewById(R.id.ListChapters);
+        Audioprog=findViewById(R.id.audioprog);
 
         Playaudio.setOnClickListener(v -> {
-            //Vibrate on click
-            if (Build.VERSION.SDK_INT >= 26) {
-//    Perform forAPI  26 and above
-                vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE));
-            } else {
-//    Perform for API 26 and below
-                vibrator.vibrate(200);
-            }
 
-            if (mp == null) {
-                mp = MediaPlayer.create(this, R.raw.dc_title);
-                mp.setOnCompletionListener(mp -> stopaudio());
-            }
+            PlayAudio();
+            Vibrate();
             mp.start();
+//
+//          SeekBar Code
+            Audioprog.setMax(mp.getDuration());
+
+            AutoMoveSeekBar();
         });
         Pauseaudio.setOnClickListener(v -> {
-            //Vibrate on click
-            if (Build.VERSION.SDK_INT >= 26) {
-//    Perform forAPI  26 and above
-                vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE));
-            } else {
-//    Perform for API 26 and below
-                vibrator.vibrate(200);
-            }
 
+            Vibrate();
             if (mp != null) {
                 mp.pause();
             }
         });
-        Stopaudio.setOnClickListener(v -> {
-            //Vibrate on click
-            if (Build.VERSION.SDK_INT >= 26) {
-//    Perform forAPI  26 and above
-                vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE));
-            } else {
-//    Perform for API 26 and below
-                vibrator.vibrate(200);
-            }
-
+        ListChapters.setOnClickListener(v -> {
+            Vibrate();
             stopaudio();
         });
     }
 
-    private void stopaudio() {
-        if (mp != null) {
-            mp.stop();
-            mp.release();
-            mp = null;
-            Log.d("mediaplayer", "released media player");
+    private void PlayAudio() {
+        //Play Audio
+        if (mp == null) {
+            mp = MediaPlayer.create(this, R.raw.dc_title);
         }
+    }
+
+    private void AutoMoveSeekBar() {
+        //        Auto change SeekBar
+        new Timer().scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                Audioprog.setProgress(mp.getCurrentPosition());
+            }
+        },0,100);
+    }
+
+    public void Vibrate() {
+
+        //Vibrate on click
+        Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+
+        if (Build.VERSION.SDK_INT >= 26) {
+//    Perform forAPI  26 and above
+            vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE));
+        } else {
+//    Perform for API 26 and below
+            vibrator.vibrate(200);
+        }
+    }
+
+    public void stopaudio() {
+            Intent MovebackIntent=new Intent(this,Book1Chapters.class);
+            startActivity(MovebackIntent);
+            if (mp.isPlaying()){
+                try {
+                    mp.stop();
+                }
+                catch (IllegalStateException e){
+                    e.printStackTrace();
+                }
+                mp.release();
+                mp=null;
+            }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        stopaudio();
     }
 
     @Override

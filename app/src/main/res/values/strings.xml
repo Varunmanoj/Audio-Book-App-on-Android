@@ -27,7 +27,7 @@
 <!--    Audio COntorls Desc-->
     <string name="PlayAudio">Play Audio</string>
     <string name="PauseAudio">Pause Audio</string>
-    <string name="StopAudio">Stop Audio</string>
+    <string name="PlayList">List Chapters</string>
 
 <!--    Image DSC-->
     <string name="ImagDsc">A Christmas Carol</string>

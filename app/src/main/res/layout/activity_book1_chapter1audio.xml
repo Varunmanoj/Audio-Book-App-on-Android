@@ -29,9 +29,9 @@
         android:layout_marginTop="4dp"
         android:contentDescription="@string/PauseAudio"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/stopaudio"
+        app:layout_constraintTop_toTopOf="@+id/ListChapters"
         app:srcCompat="@drawable/pauseaudio" />
 
     <ImageButton
@@ -50,18 +50,18 @@
         app:srcCompat="@drawable/playaudio" />
 
     <ImageButton
-        android:id="@+id/stopaudio"
+        android:id="@+id/ListChapters"
         style="@android:style/Widget.ImageButton"
         android:layout_width="81dp"
         android:layout_height="81dp"
         android:layout_marginStart="44dp"
         android:layout_marginTop="228dp"
         android:layout_marginEnd="32dp"
-        android:contentDescription="@string/StopAudio"
+        android:contentDescription="@string/PlayList"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/pauseaudio"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:srcCompat="@drawable/stopaudio" />
+        app:srcCompat="@drawable/playlist" />
 
     <SeekBar
         android:id="@+id/audioprog"
@@ -70,7 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
         android:layout_marginBottom="134dp"
-        app:layout_constraintBottom_toTopOf="@+id/stopaudio"
+        app:layout_constraintBottom_toTopOf="@+id/ListChapters"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
