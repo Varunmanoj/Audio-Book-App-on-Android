@@ -32,12 +32,11 @@ public class Book1Chapter1audio extends AppCompatActivity {
         ListChapters = findViewById(R.id.ListChapters);
         Audioprog = findViewById(R.id.audioprog);
 
+        CreateAudio();
         Playaudio.setOnClickListener(v -> {
-
-            PlayAudio();
             Vibrate();
             mp.start();
-//
+
 //          SeekBar Code
             Audioprog.setMax(mp.getDuration());
 
@@ -56,14 +55,14 @@ public class Book1Chapter1audio extends AppCompatActivity {
         });
     }
 
-    private void PlayAudio() {
+    public void CreateAudio() {
         //Play Audio
         if (mp == null) {
             mp = MediaPlayer.create(this, R.raw.dc_title);
         }
     }
 
-    private void AutoMoveSeekBar() {
+    public void AutoMoveSeekBar() {
         //        Auto change SeekBar
         new Timer().scheduleAtFixedRate(new TimerTask() {
             @Override
@@ -90,24 +89,47 @@ public class Book1Chapter1audio extends AppCompatActivity {
     public void playlist() {
         Intent MovebackIntent = new Intent(this, Book1Chapters.class);
         startActivity(MovebackIntent);
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        CreateAudio();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        stopaudio();
 
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-
+        stopaudio();
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        CreateAudio();
+    }
+
+    private void stopaudio() {
+        if (mp != null) {
+            mp.stop();
+            mp.reset();
+            mp.release();
+            mp = null;
+        }
+    }
+
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        stopaudio();
 
     }
 }
