@@ -29,4 +29,6 @@
     <string name="PauseAudio">Pause Audio</string>
     <string name="StopAudio">Stop Audio</string>
 
+<!--    Image DSC-->
+    <string name="ImagDsc">A Christmas Carol</string>
 </resources>

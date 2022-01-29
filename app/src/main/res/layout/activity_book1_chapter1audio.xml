@@ -9,10 +9,10 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="194dp"
-        android:layout_height="127dp"
+        android:layout_width="259dp"
+        android:layout_height="165dp"
         android:layout_marginTop="16dp"
-        android:contentDescription="@string/Playaudio"
+        android:contentDescription="@string/ImagDsc"
         android:scaleType="centerInside"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,7 +29,7 @@
         android:layout_marginTop="4dp"
         android:contentDescription="@string/PauseAudio"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintHorizontal_bias="0.58"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/stopaudio"
         app:srcCompat="@drawable/pauseaudio" />
@@ -39,13 +39,13 @@
         style="@android:style/Widget.ImageButton"
         android:layout_width="80dp"
         android:layout_height="67dp"
-        android:layout_marginStart="58dp"
+        android:layout_marginStart="16dp"
         android:layout_marginEnd="56dp"
         android:layout_marginBottom="4dp"
         android:contentDescription="@string/PlayAudio"
         app:layout_constraintBottom_toBottomOf="@+id/pauseaudio"
         app:layout_constraintEnd_toStartOf="@+id/pauseaudio"
-        app:layout_constraintHorizontal_bias="0.477"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/playaudio" />
 
@@ -54,9 +54,11 @@
         style="@android:style/Widget.ImageButton"
         android:layout_width="81dp"
         android:layout_height="81dp"
-        android:layout_marginStart="52dp"
+        android:layout_marginStart="44dp"
         android:layout_marginTop="228dp"
+        android:layout_marginEnd="32dp"
         android:contentDescription="@string/StopAudio"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/pauseaudio"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:srcCompat="@drawable/stopaudio" />
