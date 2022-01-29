@@ -20,6 +20,7 @@ public class Book1Chapter1audio extends AppCompatActivity {
     ImageButton ListChapters;
     MediaPlayer mp;
     SeekBar Audioprog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +30,7 @@ public class Book1Chapter1audio extends AppCompatActivity {
         Playaudio = findViewById(R.id.playaudio);
         Pauseaudio = findViewById(R.id.pauseaudio);
         ListChapters = findViewById(R.id.ListChapters);
-        Audioprog=findViewById(R.id.audioprog);
+        Audioprog = findViewById(R.id.audioprog);
 
         Playaudio.setOnClickListener(v -> {
 
@@ -69,7 +70,7 @@ public class Book1Chapter1audio extends AppCompatActivity {
             public void run() {
                 Audioprog.setProgress(mp.getCurrentPosition());
             }
-        },0,100);
+        }, 0, 100);
     }
 
     public void Vibrate() {
@@ -87,8 +88,8 @@ public class Book1Chapter1audio extends AppCompatActivity {
     }
 
     public void playlist() {
-            Intent MovebackIntent=new Intent(this,Book1Chapters.class);
-            startActivity(MovebackIntent);
+        Intent MovebackIntent = new Intent(this, Book1Chapters.class);
+        startActivity(MovebackIntent);
 
     }
 

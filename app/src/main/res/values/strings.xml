@@ -16,7 +16,7 @@
         <item>Chapter 3</item>
     </string-array>
 
-<!--    Action Bar Title text-->
+    <!--    Action Bar Title text-->
     <string name="Book1">A Christmas Carol</string>
     <string name="Book2">The Adventures of Pinocchio</string>
 
@@ -24,11 +24,11 @@
     <string name="Chapter1audio">Title</string>
     <string name="Chapter2audio">Preface</string>
 
-<!--    Audio COntorls Desc-->
+    <!--    Audio COntorls Desc-->
     <string name="PlayAudio">Play Audio</string>
     <string name="PauseAudio">Pause Audio</string>
     <string name="PlayList">List Chapters</string>
 
-<!--    Image DSC-->
+    <!--    Image DSC-->
     <string name="ImagDsc">A Christmas Carol</string>
 </resources>

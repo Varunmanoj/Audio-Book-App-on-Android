@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     //    Vibration
     Vibrator vibrator;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
