@@ -1,4 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Audio Book</string>
+    <string-array name="BookName">
+        <item>A Christmas Carol</item>
+        <item>The Adventures of Pinocchio </item>
+    </string-array>
 
+    <string-array name="Book1ChaptersList">
+        <item>Title</item>
+        <item>Preface</item>
+    </string-array>
+
+    <string-array name="Book2ChaptersList">
+        <item>Chapter 1</item>
+        <item>Chapter 2</item>
+        <item>Chapter 3</item>
+    </string-array>
+
+    <!--    Action Bar Title text-->
+    <string name="Book1">A Christmas Carol</string>
+    <string name="Book2">The Adventures of Pinocchio</string>
+
+    <!--    Book1 Chapter Audio-->
+    <string name="Chapter1audio">Title</string>
+    <string name="Chapter2audio">Preface</string>
+
+    <!--    Audio COntorls Desc-->
+    <string name="PlayAudio">Play Audio</string>
+    <string name="PauseAudio">Pause Audio</string>
+    <string name="PlayList">List Chapters</string>
+
+    <!--    Image DSC-->
+    <string name="ImagDsc">A Christmas Carol</string>
 </resources>
