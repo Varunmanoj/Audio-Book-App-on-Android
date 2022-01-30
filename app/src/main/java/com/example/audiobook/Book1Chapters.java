@@ -17,7 +17,7 @@ public class Book1Chapters extends AppCompatActivity {
 
     ListView book1Chapter1List;
     //    For TTS to work
-    String Readtext;
+    String ReadText;
     TextToSpeech mTTS;
 
     @Override
@@ -25,60 +25,66 @@ public class Book1Chapters extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book1_chapters);
 
-        //Vibrate on click
-        Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
-
 //        Link Java and XML
         book1Chapter1List = findViewById(R.id.Book1ChapterList);
         book1Chapter1List.setOnItemClickListener((parent, view, position, id) -> {
 
-//            Extract the text selected  by user in string
-//                Make the app self voicing
-            String Readtext = book1Chapter1List.getItemAtPosition(position).toString();
-            mTTS = new TextToSpeech(getApplicationContext(), status -> {
-                if (status == TextToSpeech.SUCCESS) {
-                    mTTS.setLanguage(Locale.ENGLISH);
-                }
-//                    Speak button click
-                mTTS.speak(Readtext, TextToSpeech.QUEUE_FLUSH, null);
-            });
-
-            //Vibrate on click
-            if (Build.VERSION.SDK_INT >= 26) {
-//    Perform forAPI  26 and above
-                vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE));
-            } else {
-//    Perform for API 26 and below
-                vibrator.vibrate(200);
-            }
+            //            Extract the text selected  by user in string
+            ReadText=book1Chapter1List.getItemAtPosition(position).toString();
+            SpeakSelection();
+            Vibrate();
             //Click Listener for items
             switch (position) {
                 case 0:
-                    Toast.makeText(getApplicationContext(), "You selected chapter 1", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "You selected chapter 1", Toast.LENGTH_SHORT).show();
                     Intent MusicPlayerinter = new Intent(Book1Chapters.this, Book1Chapter1audio.class);
                     startActivity(MusicPlayerinter);
                     break;
                 case 1:
-                    Toast.makeText(getApplicationContext(), "You selected chapter 2", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "You selected chapter 2", Toast.LENGTH_SHORT).show();
                     break;
             }
         });
     }
 
+    public void SpeakSelection() {
+//       Make the app self voicing
+
+        mTTS = new TextToSpeech(getApplicationContext(), status -> {
+            if (status == TextToSpeech.SUCCESS) {
+                mTTS.setLanguage(Locale.ENGLISH);
+            }
+//                    Speak button click
+            mTTS.speak(ReadText, TextToSpeech.QUEUE_FLUSH, null,null);
+        });
+    }
+
+    public void Vibrate() {
+        Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+        //Vibrate on click
+        if (Build.VERSION.SDK_INT >= 26) {
+//    Perform forAPI  26 and above
+            vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE));
+        } else {
+//    Perform for API 26 and below
+            vibrator.vibrate(200);
+        }
+    }
+
     @Override
     protected void onStop() {
         super.onStop();
-//                Release resources if audio tts is not speaking
-        if (!mTTS.isSpeaking()) {
-            mTTS.stop();
-            mTTS.shutdown();
-        }
+        ReleaseTTS();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-//        Release resources if audio tts is not speaking
+
+    }
+
+    public void ReleaseTTS() {
+        //        Release resources if audio tts is not speaking
         if (!mTTS.isSpeaking()) {
             mTTS.stop();
         }
@@ -87,10 +93,6 @@ public class Book1Chapters extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-//                Release resources if audio tts is not speaking
-        if (!mTTS.isSpeaking()) {
-            mTTS.stop();
-            mTTS.shutdown();
-        }
+        ReleaseTTS();
     }
 }
