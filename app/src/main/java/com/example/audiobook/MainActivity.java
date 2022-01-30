@@ -19,16 +19,10 @@ public class MainActivity extends AppCompatActivity {
     String Readtext;
     TextToSpeech mTTS;
 
-    //    Vibration
-    Vibrator vibrator;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        //Vibrate on click
-        Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
 
         Bookname = findViewById(R.id.Bookname);
 //        Get  System Language of the system
@@ -37,26 +31,12 @@ public class MainActivity extends AppCompatActivity {
 
         Bookname.setOnItemClickListener((parent, view, position, id) -> {
 
-//                Make the app self voicing
 //                Extract the text selected  by user in string
-            String Readtext = Bookname.getItemAtPosition(position).toString();
+             Readtext = Bookname.getItemAtPosition(position).toString();
 
-            mTTS = new TextToSpeech(this, status -> {
-                if (status == TextToSpeech.SUCCESS) {
-                    mTTS.setLanguage(Locale.ENGLISH);
-                }
-//                    Speak button click
-                mTTS.speak(Readtext, TextToSpeech.QUEUE_FLUSH, null,null);
+            SpeakSelection();
+            Vibrate();
 
-            });
-//Vibrate on click
-            if (Build.VERSION.SDK_INT >= 26) {
-//    Perform forAPI  26 and above
-                vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE));
-            } else {
-//    Perform for API 26 and below
-                vibrator.vibrate(200);
-            }
 //                Create List Items  clickable
             switch (position) {
                 case 0:
@@ -73,25 +53,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    public void SpeakSelection() {
+        mTTS = new TextToSpeech(this, status -> {
+            if (status == TextToSpeech.SUCCESS) {
+                mTTS.setLanguage(Locale.ENGLISH);
+            }
+//                    Speak button click
+            mTTS.speak(Readtext, TextToSpeech.QUEUE_FLUSH, null, null);
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-//                Release resources if audio tts is not speaking
-        if (!mTTS.isSpeaking()) {
-            mTTS.stop();
-            mTTS.shutdown();
-        }
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-//                Release resources if audio tts is not speaking
-        if (!mTTS.isSpeaking()) {
-            mTTS.stop();
-            mTTS.shutdown();
-        }
+        });
     }
     public  void CreateTTS(){
         mTTS = new TextToSpeech(this, status -> {
@@ -99,5 +69,47 @@ public class MainActivity extends AppCompatActivity {
                 mTTS.setLanguage(Locale.ENGLISH);
             }
         });
+    }
+    public void Vibrate(){
+        Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+        //Vibrate on click
+        if (Build.VERSION.SDK_INT >= 26) {
+//    Perform forAPI  26 and above
+            vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE));
+        } else {
+//    Perform for API 26 and below
+            vibrator.vibrate(200);
+        }
+    }
+    public void ReleaseTTS(){
+        //        Release resources if audio tts is not speaking
+        if (!mTTS.isSpeaking()) {
+            mTTS.stop();
+        }
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        ReleaseTTS();
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ReleaseTTS();
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        CreateTTS();
+    }
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        CreateTTS();
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        CreateTTS();
     }
 }
