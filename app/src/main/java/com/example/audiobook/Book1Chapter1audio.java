@@ -90,6 +90,20 @@ public class Book1Chapter1audio extends AppCompatActivity {
         Intent MovebackIntent = new Intent(this, Book1Chapters.class);
         startActivity(MovebackIntent);
     }
+    private void stopaudio() {
+        if (mp != null) {
+            mp.stop();
+            mp.reset();
+            mp.release();
+            mp = null;
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        CreateAudio();
+    }
 
     @Override
     protected void onStop() {
@@ -103,24 +117,15 @@ public class Book1Chapter1audio extends AppCompatActivity {
         CreateAudio();
     }
 
-    private void stopaudio() {
-        if (mp != null) {
-            mp.stop();
-            mp.reset();
-            mp.release();
-            mp = null;
-        }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        stopaudio();
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
         CreateAudio();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        stopaudio();
     }
 }
