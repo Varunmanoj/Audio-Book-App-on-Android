@@ -15,7 +15,7 @@ import java.util.Locale;
 public class Book2ChapterList extends AppCompatActivity {
     ListView Book2ChapterList;
     //For TTS
-    String Readtext;
+    String ReadText;
     TextToSpeech mTTS;
 
     @Override
@@ -23,34 +23,15 @@ public class Book2ChapterList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book2_chapter_list);
 
-        //Vibrate on click
-        Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
-
 //        Link Java and XML
         Book2ChapterList = findViewById(R.id.Book2ChapterList);
         Book2ChapterList.setOnItemClickListener((parent, view, position, id) -> {
 
-//            Extract the text selected  by user in string
-//                Make the app self voicing
-            String Readtext = Book2ChapterList.getItemAtPosition(position).toString();
+            //            Extract the text selected  by user in string
+            ReadText = Book2ChapterList.getItemAtPosition(position).toString();
+            SpeakSelection();
+            Vibrate();
 
-            mTTS = new TextToSpeech(getApplicationContext(), status -> {
-                if (status == TextToSpeech.SUCCESS) {
-                    mTTS.setLanguage(Locale.ENGLISH);
-                }
-//                    Speak button click
-                mTTS.speak(Readtext, TextToSpeech.QUEUE_FLUSH, null);
-
-            });
-
-            //Vibrate on click
-            if (Build.VERSION.SDK_INT >= 26) {
-//    Perform forAPI  26 and above
-                vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE));
-            } else {
-//    Perform for API 26 and below
-                vibrator.vibrate(200);
-            }
 //Click event for List Item
             switch (position) {
                 case 0:
@@ -61,5 +42,56 @@ public class Book2ChapterList extends AppCompatActivity {
                     break;
             }
         });
+    }
+
+    public void SpeakSelection() {
+//                Make the app self voicing
+
+        mTTS = new TextToSpeech(this, status -> {
+            if (status == TextToSpeech.SUCCESS) {
+                mTTS.setLanguage(Locale.ENGLISH);
+            }
+//                    Speak button click
+            mTTS.speak(ReadText, TextToSpeech.QUEUE_FLUSH, null, null);
+
+        });
+    }
+
+    public void Vibrate() {
+        Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+
+        //Vibrate on click
+        if (Build.VERSION.SDK_INT >= 26) {
+//    Perform forAPI  26 and above
+            vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE));
+        } else {
+//    Perform for API 26 and below
+            vibrator.vibrate(200);
+        }
+    }
+    public void ReleaseTTS() {
+        //        Release resources if audio tts is not speaking
+        if (!mTTS.isSpeaking()) {
+            mTTS.stop();
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        ReleaseTTS();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        ReleaseTTS();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        ReleaseTTS();
     }
 }

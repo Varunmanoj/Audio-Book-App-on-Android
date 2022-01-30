@@ -50,7 +50,7 @@ public class Book1Chapters extends AppCompatActivity {
     public void SpeakSelection() {
 //       Make the app self voicing
 
-        mTTS = new TextToSpeech(getApplicationContext(), status -> {
+        mTTS = new TextToSpeech(this, status -> {
             if (status == TextToSpeech.SUCCESS) {
                 mTTS.setLanguage(Locale.ENGLISH);
             }
@@ -80,6 +80,7 @@ public class Book1Chapters extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
+        ReleaseTTS();
 
     }
 
