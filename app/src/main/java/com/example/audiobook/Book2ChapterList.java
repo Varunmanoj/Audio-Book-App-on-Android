@@ -75,12 +75,12 @@ public class Book2ChapterList extends AppCompatActivity {
             mTTS.stop();
         }
     }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-
-        ReleaseTTS();
+    public  void CreateTTS(){
+        mTTS = new TextToSpeech(this, status -> {
+            if (status == TextToSpeech.SUCCESS) {
+                mTTS.setLanguage(Locale.ENGLISH);
+            }
+        });
     }
 
     @Override
@@ -88,10 +88,24 @@ public class Book2ChapterList extends AppCompatActivity {
         super.onStop();
         ReleaseTTS();
     }
-
     @Override
-    protected void onPause() {
-        super.onPause();
+    protected void onDestroy() {
+        super.onDestroy();
         ReleaseTTS();
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        CreateTTS();
+    }
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        CreateTTS();
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        CreateTTS();
     }
 }

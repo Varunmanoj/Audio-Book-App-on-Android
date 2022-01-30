@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                     mTTS.setLanguage(Locale.ENGLISH);
                 }
 //                    Speak button click
-                mTTS.speak(Readtext, TextToSpeech.QUEUE_FLUSH, null);
+                mTTS.speak(Readtext, TextToSpeech.QUEUE_FLUSH, null,null);
 
             });
 //Vibrate on click
@@ -92,5 +92,12 @@ public class MainActivity extends AppCompatActivity {
             mTTS.stop();
             mTTS.shutdown();
         }
+    }
+    public  void CreateTTS(){
+        mTTS = new TextToSpeech(this, status -> {
+            if (status == TextToSpeech.SUCCESS) {
+                mTTS.setLanguage(Locale.ENGLISH);
+            }
+        });
     }
 }

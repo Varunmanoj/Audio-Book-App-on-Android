@@ -77,13 +77,6 @@ public class Book1Chapters extends AppCompatActivity {
         ReleaseTTS();
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        ReleaseTTS();
-
-    }
-
     public void ReleaseTTS() {
         //        Release resources if audio tts is not speaking
         if (!mTTS.isSpeaking()) {
@@ -95,5 +88,30 @@ public class Book1Chapters extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         ReleaseTTS();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        CreateTTS();
+    }
+    public  void CreateTTS(){
+        mTTS = new TextToSpeech(this, status -> {
+            if (status == TextToSpeech.SUCCESS) {
+                mTTS.setLanguage(Locale.ENGLISH);
+            }
+        });
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        CreateTTS();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        CreateTTS();
     }
 }

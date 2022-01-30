@@ -32,7 +32,7 @@ public class Book1Chapter1audio extends AppCompatActivity {
         ListChapters = findViewById(R.id.ListChapters);
         Audioprog = findViewById(R.id.audioprog);
 
-        CreateAudio();
+
         Playaudio.setOnClickListener(v -> {
             Vibrate();
             mp.start();
@@ -92,19 +92,6 @@ public class Book1Chapter1audio extends AppCompatActivity {
     }
 
     @Override
-    protected void onStart() {
-        super.onStart();
-        CreateAudio();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        stopaudio();
-
-    }
-
-    @Override
     protected void onStop() {
         super.onStop();
         stopaudio();
@@ -125,11 +112,15 @@ public class Book1Chapter1audio extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        CreateAudio();
+    }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         stopaudio();
-
     }
 }
