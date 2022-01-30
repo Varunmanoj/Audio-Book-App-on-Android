@@ -10,4 +10,10 @@
 
     <!--Background Color-->
     <color name="BackgroundColor">#B8CAEA</color>
+
+    <!--    Image Button  Background Color-->
+    <color name="ImgBackgroundColor">#915959</color>
+
+<!--    SeekBar background Color-->
+    <color name="SeekbarBackground">#B8CAEA</color>
 </resources>
