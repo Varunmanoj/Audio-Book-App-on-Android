@@ -32,6 +32,6 @@
     <!--    Image DSC-->
     <string name="ImagDsc">A Christmas Carol</string>
 
-<!--    SeekBar DSC-->
+    <!--    SeekBar DSC-->
     <string name="SeekBarDSC">Change Progress</string>
 </resources>
