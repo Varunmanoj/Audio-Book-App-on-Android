@@ -20,10 +20,10 @@ public class MainActivity3 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getActionBar().hide();
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main3);
-        image = findViewById(R.id.imageView);
+        getSupportActionBar().hide();
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        image = findViewById(R.id.imageView2);
         logo = findViewById(R.id.textView);
         slogan = findViewById(R.id.textView2);
 
@@ -33,14 +33,11 @@ public class MainActivity3 extends AppCompatActivity {
         logo.setAnimation(bottomAnim);
         slogan.setAnimation(bottomAnim);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(MainActivity3.this,MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        },5000);
+        new Handler().postDelayed(() -> {
+            Intent intent = new Intent(MainActivity3.this,MainActivity.class);
+            startActivity(intent);
+            finish();
+        },3000);
 
     }
 

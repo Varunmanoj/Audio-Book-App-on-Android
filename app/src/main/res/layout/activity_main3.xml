@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
-        android:text="hearme"
+        android:text="HearMe"
         android:textAlignment="center"
         android:textColor="#EEFF00"
         android:textSize="70sp"
