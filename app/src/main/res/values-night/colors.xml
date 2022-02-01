@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="purple_700">#FF3700B3</color>
+
     <!--Background Color-->
     <color name="BackgroundColor">#002AFF</color>
 
@@ -8,4 +10,9 @@
 
     <!--    SeekBar background Color-->
     <color name="SeekbarBackground">#0D3D91</color>
+
+    <!--    Splash Screen Colors-->
+    <color name="splashScreenBG">#FF3700B3</color>
+    <color name="SplashScreenTitleColor">#EEFF00</color>
+    <color name="SplashScreenSloggenTextColor">#FFF200</color>
 </resources>

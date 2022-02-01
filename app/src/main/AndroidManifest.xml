@@ -11,6 +11,7 @@
         </intent>
     </queries>
 
+<!--    Vibrate Permission-->
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
@@ -23,7 +24,9 @@
         <activity android:name=".MainActivity"></activity>
         <activity
             android:name=".MainActivity3"
-            android:exported="true" >
+            android:exported="true"
+            android:label="@string/SplashScreenAppScreenName">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -46,11 +49,6 @@
             android:exported="false"
             android:label="@string/Book1"
             android:parentActivityName=".MainActivity" />
-        <!--<activity
-            android:name=".MainActivity3"
-            android:exported="false" >
-
-        </activity>-->
 
         <meta-data
             android:name="preloaded_fonts"

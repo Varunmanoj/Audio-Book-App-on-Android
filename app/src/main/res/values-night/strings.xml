@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Audio Book</string>
+
+    <!--    Splash Screen App Title-->
+    <string name="SplashScreenAppScreenName">SplashScreen</string>
+
     <string-array name="BookName">
         <item>A Christmas Carol</item>
         <item>The Adventures of Pinocchio </item>
@@ -34,4 +38,9 @@
 
     <!--    SeekBar DSC-->
     <string name="SeekBarDSC">Change Progress</string>
+
+    <!--    Splash Screen -->
+    <string name="SplashScreenTitle">HearMe</string>
+    <string name="SplashScreenSlogen">Listen to enjoy. Listen to learn.</string>
+    <string name="AppIconDsc">App Icon Here ME</string>
 </resources>

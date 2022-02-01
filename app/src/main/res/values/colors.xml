@@ -16,4 +16,10 @@
 
 <!--    SeekBar background Color-->
     <color name="SeekbarBackground">#B8CAEA</color>
+
+<!--    Splash Screen Colors-->
+
+    <color name="splashScreenBG">#FF3700B3</color>
+    <color name="SplashScreenTitleColor">#EEFF00</color>
+    <color name="SplashScreenSloggenTextColor">#FFF200</color>
 </resources>

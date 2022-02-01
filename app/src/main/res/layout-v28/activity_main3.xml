@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:accessibilityPaneTitle="@string/app_name"
     android:background="@color/splashScreenBG"
     tools:context=".MainActivity3">
 
@@ -25,6 +26,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:accessibilityHeading="true"
         android:accessibilityLiveRegion="assertive"
         android:fontFamily="sans-serif"
         android:text="@string/SplashScreenTitle"
@@ -32,8 +34,6 @@
         android:textColor="@color/SplashScreenTitleColor"
         android:textSize="70sp"
         android:textStyle="bold"
-        app:autoSizeMinTextSize="48dp"
-        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.555"

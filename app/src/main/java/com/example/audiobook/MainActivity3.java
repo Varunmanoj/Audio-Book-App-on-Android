@@ -21,8 +21,9 @@ public class MainActivity3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main3);
+//        Remove the Action Bathe Splash Screen
         getSupportActionBar().hide();
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         image = findViewById(R.id.imageView2);
         logo = findViewById(R.id.textView);
         slogan = findViewById(R.id.textView2);
