@@ -5,7 +5,11 @@
     <!--Background Color-->
     <color name="BackgroundColor">#002AFF</color>
 
-<!--    Image Button  Background Color-->
+
+    <!--    List Selected Color-->
+    <color name="ListSelecterColor">#005701</color>
+
+    <!--    Image Button  Background Color-->
     <color name="ImgBackgroundColor">#E8B6B6</color>
 
     <!--    SeekBar background Color-->

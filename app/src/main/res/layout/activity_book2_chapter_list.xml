@@ -12,6 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:entries="@array/Book2ChaptersList"
+        android:listSelector="@color/ListSelecterColor"
         android:scrollbars="vertical"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"

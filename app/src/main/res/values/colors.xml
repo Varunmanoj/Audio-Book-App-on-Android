@@ -11,13 +11,16 @@
     <!--Background Color-->
     <color name="BackgroundColor">#B8CAEA</color>
 
+    <!--    List Selected Color-->
+    <color name="ListSelecterColor">#ffeb3b</color>
+
     <!--    Image Button  Background Color-->
     <color name="ImgBackgroundColor">#915959</color>
 
-<!--    SeekBar background Color-->
+    <!--    SeekBar background Color-->
     <color name="SeekbarBackground">#B8CAEA</color>
 
-<!--    Splash Screen Colors-->
+    <!--    Splash Screen Colors-->
 
     <color name="splashScreenBG">#FF3700B3</color>
     <color name="SplashScreenTitleColor">#EEFF00</color>
