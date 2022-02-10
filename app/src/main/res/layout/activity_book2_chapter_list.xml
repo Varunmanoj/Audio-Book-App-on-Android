@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/BackgroundColor"
-    tools:context=".Book2ChapterList">
+    tools:context="com.varuncollegeproject.audiobook.Book2ChapterList">
 
     <ListView
         android:id="@+id/Book2ChapterList"

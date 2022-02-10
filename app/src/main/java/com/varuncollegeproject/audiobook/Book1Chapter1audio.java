@@ -1,4 +1,4 @@
-package com.example.audiobook;
+package com.varuncollegeproject.audiobook;
 
 import android.content.Intent;
 import android.media.MediaPlayer;

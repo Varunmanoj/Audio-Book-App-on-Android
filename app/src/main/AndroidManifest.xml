@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
-    package="com.example.audiobook">
+    package="com.varuncollegeproject.audiobook">
 
     <dist:module dist:instant="true" />
 
@@ -23,10 +23,10 @@
         android:theme="@style/Theme.AudioBook">
 
         <activity
-            android:name=".MainActivity"
+            android:name="com.varuncollegeproject.audiobook.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity3"
+            android:name="com.varuncollegeproject.audiobook.MainActivity3"
             android:exported="true"
             android:description="@string/SplashScreenAppScreenName"
             android:hardwareAccelerated="true">
@@ -39,20 +39,20 @@
 
         </activity>
         <activity
-            android:name=".Book1Chapter1audio"
+            android:name="com.varuncollegeproject.audiobook.Book1Chapter1audio"
             android:exported="false"
             android:label="@string/Chapter1audio"
-            android:parentActivityName=".Book1Chapters" />
+            android:parentActivityName="com.varuncollegeproject.audiobook.Book1Chapters" />
         <activity
-            android:name=".Book2ChapterList"
+            android:name="com.varuncollegeproject.audiobook.Book2ChapterList"
             android:exported="false"
             android:label="@string/Book2"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="com.varuncollegeproject.audiobook.MainActivity" />
         <activity
-            android:name=".Book1Chapters"
+            android:name="com.varuncollegeproject.audiobook.Book1Chapters"
             android:exported="false"
             android:label="@string/Book1"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="com.varuncollegeproject.audiobook.MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

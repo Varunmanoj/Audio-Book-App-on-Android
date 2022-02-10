@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/BackgroundColor"
-    tools:context=".Book1Chapter1audio">
+    tools:context="com.varuncollegeproject.audiobook.Book1Chapter1audio">
 
     <ImageView
         android:id="@+id/imageView"

@@ -1,4 +1,4 @@
-package com.example.audiobook;
+package com.varuncollegeproject.audiobook;
 
 import static org.junit.Assert.assertEquals;
 

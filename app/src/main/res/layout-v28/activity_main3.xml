@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:accessibilityPaneTitle="@string/app_name"
     android:background="@color/splashScreenBG"
-    tools:context=".MainActivity3">
+    tools:context="com.varuncollegeproject.audiobook.MainActivity3">
 
     <ImageView
         android:id="@+id/imageView2"

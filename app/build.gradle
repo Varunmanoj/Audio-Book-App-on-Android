@@ -6,7 +6,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.example.audiobook"
+        applicationId "com.varuncollegeproject.audiobook"
         minSdk 22
         targetSdk 31
         versionCode 3

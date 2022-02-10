@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/BackgroundColor"
-    tools:context=".MainActivity">
+    tools:context="com.varuncollegeproject.audiobook.MainActivity">
 
     <ListView
         android:id="@+id/Bookname"
