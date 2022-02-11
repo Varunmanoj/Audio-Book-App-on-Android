@@ -69,7 +69,26 @@ public class Book1Chapter1audio extends AppCompatActivity {
             public void run() {
                 Audioprog.setProgress(mp.getCurrentPosition());
             }
-        }, 0, 100);
+        }, 0, 10);
+
+        Audioprog.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if (fromUser) {
+                    mp.seekTo(progress);
+                }
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
     }
 
     public void Vibrate() {
