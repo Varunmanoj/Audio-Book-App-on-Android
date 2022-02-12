@@ -35,16 +35,14 @@ public class Book1Chapter1audio extends AppCompatActivity {
 
 
         Playaudio.setOnClickListener(v -> {
+            CreateAudio();
             Vibrate();
             mp.start();
-
-//          SeekBar Code
-            Audioprog.setMax(mp.getDuration());
 
             AutoMoveSeekBar();
         });
         Pauseaudio.setOnClickListener(v -> {
-
+            CreateAudio();
             Vibrate();
             if (mp != null) {
                 mp.pause();
@@ -71,6 +69,8 @@ public class Book1Chapter1audio extends AppCompatActivity {
     }
 
     public void AutoMoveSeekBar() {
+//Set the Max of the Seekbar to the Max duration of the audio file.
+        Audioprog.setMax(mp.getDuration());
         //        Auto change SeekBar
         new Timer().scheduleAtFixedRate(new TimerTask() {
             @Override
@@ -135,7 +135,7 @@ public class Book1Chapter1audio extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        stopaudio();
+
     }
 
     @Override
