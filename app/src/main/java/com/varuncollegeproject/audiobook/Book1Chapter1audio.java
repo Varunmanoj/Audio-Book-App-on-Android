@@ -11,6 +11,7 @@ import android.widget.SeekBar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -56,9 +57,16 @@ public class Book1Chapter1audio extends AppCompatActivity {
     }
 
     public void CreateAudio() {
+        String TitleURL = "https://firebasestorage.googleapis.com/v0/b/here-me-audio-book.appspot.com/o/Dickens_Carol%2Fdc_title.wav?alt=media&token=2b394dcd-98ce-4847-8170-3c55a6a4d1e9";
         //Play Audio
         if (mp == null) {
-            mp = MediaPlayer.create(this, R.raw.dc_title);
+            mp = new MediaPlayer();
+            try {
+                mp.setDataSource(TitleURL);
+                mp.prepare();
+            } catch (IOException | IllegalArgumentException e) {
+                e.printStackTrace();
+            }
         }
     }
 

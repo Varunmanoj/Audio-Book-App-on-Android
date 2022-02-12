@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "708949611269",
+    "project_id": "here-me-audio-book",
+    "storage_bucket": "here-me-audio-book.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:708949611269:android:3d7cf60c9fb1cb57771d6c",
+        "android_client_info": {
+          "package_name": "com.varuncollegeproject.audiobook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "708949611269-6eu4q78nor9dmudf0vgb4ttu09tplp40.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDooCR9ZXIY3vRtXkFD3GGE_vUpluXwfI8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "708949611269-6eu4q78nor9dmudf0vgb4ttu09tplp40.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
