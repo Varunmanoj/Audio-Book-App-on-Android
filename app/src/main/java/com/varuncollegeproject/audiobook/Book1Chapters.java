@@ -7,7 +7,6 @@ import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.speech.tts.TextToSpeech;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -36,12 +35,12 @@ public class Book1Chapters extends AppCompatActivity {
             //Click Listener for items
             switch (position) {
                 case 0:
-                    Toast.makeText(this, "You selected chapter 1", Toast.LENGTH_SHORT).show();
-                    Intent MusicPlayerinter = new Intent(Book1Chapters.this, Book1Chapter1audio.class);
+
+                    Intent MusicPlayerinter = new Intent(Book1Chapters.this, Player.class);
                     startActivity(MusicPlayerinter);
                     break;
                 case 1:
-                    Toast.makeText(this, "You selected chapter 2", Toast.LENGTH_SHORT).show();
+
                     break;
             }
         });

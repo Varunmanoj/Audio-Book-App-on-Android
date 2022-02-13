@@ -7,7 +7,6 @@ import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.speech.tts.TextToSpeech;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -40,12 +39,11 @@ public class MainActivity extends AppCompatActivity {
 //                Create List Items  clickable
             switch (position) {
                 case 0:
-                    Toast.makeText(getApplicationContext(), "You selected book 1", Toast.LENGTH_SHORT).show();
+
                     Intent nextscreanIntent = new Intent(MainActivity.this, Book1Chapters.class);
                     startActivity(nextscreanIntent);
                     break;
                 case 1:
-                    Toast.makeText(getApplicationContext(), "You selected book 2", Toast.LENGTH_SHORT).show();
                     Intent Book2Intent = new Intent(MainActivity.this, Book2ChapterList.class);
                     startActivity(Book2Intent);
                     break;

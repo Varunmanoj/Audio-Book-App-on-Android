@@ -6,7 +6,6 @@ import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.speech.tts.TextToSpeech;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -35,10 +34,10 @@ public class Book2ChapterList extends AppCompatActivity {
 //Click event for List Item
             switch (position) {
                 case 0:
-                    Toast.makeText(getApplicationContext(), "You selected chapter 1", Toast.LENGTH_SHORT).show();
+
                     break;
                 case 1:
-                    Toast.makeText(getApplicationContext(), "You selected chapter 2", Toast.LENGTH_SHORT).show();
+
                     break;
             }
         });

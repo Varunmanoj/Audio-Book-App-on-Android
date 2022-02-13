@@ -21,7 +21,9 @@
         android:theme="@style/Theme.AudioBook">
         <activity
             android:name=".Player"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/Chapter1audio"
+            android:parentActivityName=".Book1Chapters" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
@@ -38,9 +40,7 @@
         </activity>
         <activity
             android:name=".Book1Chapter1audio"
-            android:exported="false"
-            android:label="@string/Chapter1audio"
-            android:parentActivityName=".Book1Chapters" />
+            android:exported="false" />
         <activity
             android:name=".Book2ChapterList"
             android:exported="false"
