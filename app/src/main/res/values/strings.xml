@@ -43,5 +43,6 @@
     <string name="SplashScreenSlogen">Listen to enjoy. Listen to learn.</string>
     <string name="AppIconDsc">App Icon Here ME</string>
     <string name="SplashScreenLoadingMSG">Loading Please Wait ...</string>
+    <string name="StopAudio">Stop Audio</string>
 
 </resources>

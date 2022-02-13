@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black">
 
 
-    <de.hdodenhof.circleimageview.CircleImageView
+    <ImageView
         android:id="@+id/circleImageView"
         android:layout_width="317dp"
         android:layout_height="364dp"
@@ -16,7 +15,8 @@
         android:layout_marginTop="79dp"
         android:layout_marginEnd="42dp"
         android:layout_marginBottom="287dp"
-        android:src="@drawable/img"
+        android:contentDescription="@string/ImagDsc"
+        android:src="@drawable/a_crismesccarol"
         app:civ_border_color="@color/white"
         app:civ_border_width="6dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,6 +32,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:backgroundTint="@color/purple_700"
+        android:contentDescription="@string/PlayAudio"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.533"
@@ -45,8 +46,9 @@
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:backgroundTint="@color/purple_700"
-        android:src="@drawable/ic_baseline_pause_circle_filled_24"
+        android:contentDescription="@string/PauseAudio"
 
+        android:src="@drawable/ic_baseline_pause_circle_filled_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.877"
@@ -59,6 +61,7 @@
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:backgroundTint="@color/purple_700"
+        android:contentDescription="@string/StopAudio"
         android:src="@drawable/ic_baseline_stop_circle_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -71,6 +74,7 @@
         android:id="@+id/seekBar"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/SeekBarDSC"
         android:foregroundTint="#FFFFFF"
         android:progressTint="#FFFFFF"
         android:secondaryProgressTint="#FFFFFF"
