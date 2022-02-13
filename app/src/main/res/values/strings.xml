@@ -44,5 +44,5 @@
     <string name="AppIconDsc">App Icon Here ME</string>
     <string name="SplashScreenLoadingMSG">Loading Please Wait ...</string>
     <string name="StopAudio">Stop Audio</string>
-
+    <string name="_0_00">0:00</string>
 </resources>

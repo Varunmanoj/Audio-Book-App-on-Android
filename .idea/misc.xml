@@ -21,8 +21,13 @@
         <entry key="..\:/Users/varun/AndroidStudioProjects/Audio-Book-App-on-Android/app/src/main/res/layout/activity_book1_chapter1audio.xml" value="0.25" />
         <entry key="..\:/Users/varun/AndroidStudioProjects/Audio-Book-App-on-Android/app/src/main/res/layout/activity_player.xml" value="0.25" />
         <entry key="..\:/Users/varun/AndroidStudioProjects/Audio-Book-App-on-Android/app/src/main/res/layout/uiscreen.xml" value="0.1" />
+        <entry key="app/src/main/res/layout-land/activity_player.xml" value="0.327027027027027" />
+        <entry key="app/src/main/res/layout/activity_book1_chapter1audio.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_book1_chapters.xml" value="0.1890625" />
+        <entry key="app/src/main/res/layout/activity_book2_chapter_list.xml" value="0.1890625" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main3.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_player.xml" value="0.25" />
       </map>
     </option>
   </component>
