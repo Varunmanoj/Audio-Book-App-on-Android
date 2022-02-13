@@ -75,15 +75,18 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:contentDescription="@string/SeekBarDSC"
-        android:foregroundTint="#FFFFFF"
-        android:progressTint="#FFFFFF"
-        android:secondaryProgressTint="#FFFFFF"
+        android:foregroundTint="@color/splashScreenBG"
+        android:indeterminateTint="@color/splashScreenBG"
+        android:progressTint="@color/splashScreenBG"
+        android:secondaryProgressTint="@color/splashScreenBG"
+        android:thumbTint="@color/ImgBackgroundColor"
         app:layout_constraintBottom_toTopOf="@+id/imageButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/circleImageView"
-        app:layout_constraintVertical_bias="0.494" />
+        app:layout_constraintVertical_bias="0.494"
+        app:tickMarkTint="@color/ImgBackgroundColor" />
 
     <TextView
         android:id="@+id/textView5"
