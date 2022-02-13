@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Hear Me</string>
-<!--    Splash Screen App Title-->
+    <!--    Splash Screen App Title-->
     <string name="SplashScreenAppScreenName">SplashScreen</string>
 
     <string-array name="BookName">
@@ -38,7 +38,7 @@
     <!--    SeekBar DSC-->
     <string name="SeekBarDSC">Change Progress</string>
 
-<!--    Splash Screen Text-->
+    <!--    Splash Screen Text-->
     <string name="SplashScreenTitle">HearMe</string>
     <string name="SplashScreenSlogen">Listen to enjoy. Listen to learn.</string>
     <string name="AppIconDsc">App Icon Here ME</string>

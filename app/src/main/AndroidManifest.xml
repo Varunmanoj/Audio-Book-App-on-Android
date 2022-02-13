@@ -9,9 +9,7 @@
         <intent>
             <action android:name="android.intent.action.TTS_SERVICE" />
         </intent>
-    </queries>
-
-    <!--    Vibrate Permission-->
+    </queries> <!-- Vibrate Permission -->
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
@@ -21,37 +19,38 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AudioBook">
-
         <activity
-            android:name="com.varuncollegeproject.audiobook.MainActivity"
+            android:name=".Player"
             android:exported="false" />
         <activity
-            android:name="com.varuncollegeproject.audiobook.MainActivity3"
-            android:exported="true"
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity3"
             android:description="@string/SplashScreenAppScreenName"
+            android:exported="true"
             android:hardwareAccelerated="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
-            android:name="com.varuncollegeproject.audiobook.Book1Chapter1audio"
+            android:name=".Book1Chapter1audio"
             android:exported="false"
             android:label="@string/Chapter1audio"
-            android:parentActivityName="com.varuncollegeproject.audiobook.Book1Chapters" />
+            android:parentActivityName=".Book1Chapters" />
         <activity
-            android:name="com.varuncollegeproject.audiobook.Book2ChapterList"
+            android:name=".Book2ChapterList"
             android:exported="false"
             android:label="@string/Book2"
-            android:parentActivityName="com.varuncollegeproject.audiobook.MainActivity" />
+            android:parentActivityName=".MainActivity" />
         <activity
-            android:name="com.varuncollegeproject.audiobook.Book1Chapters"
+            android:name=".Book1Chapters"
             android:exported="false"
             android:label="@string/Book1"
-            android:parentActivityName="com.varuncollegeproject.audiobook.MainActivity" />
+            android:parentActivityName=".MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
