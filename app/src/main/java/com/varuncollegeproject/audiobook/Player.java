@@ -93,6 +93,7 @@ public class Player extends AppCompatActivity {
 
             }
 
+
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
 
