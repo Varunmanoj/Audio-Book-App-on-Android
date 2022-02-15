@@ -33,6 +33,7 @@ public class Player extends AppCompatActivity {
         sk = findViewById(R.id.seekBar);
 
         mp = null;
+
 //        Click buttons
         play.setOnClickListener(v -> {
 
@@ -93,7 +94,6 @@ public class Player extends AppCompatActivity {
 
             }
 
-
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
 
@@ -126,20 +126,25 @@ public class Player extends AppCompatActivity {
     public void stopAudio() {
         if (mp != null) {
             mp.stop();
+        }
+
+    }
+
+    public void ReleaseMP() {
+        if (mp != null) {
             mp.release();
-            mp = null;
         }
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        stopAudio();
+        ReleaseMP();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        stopAudio();
+        ReleaseMP();
     }
 }
