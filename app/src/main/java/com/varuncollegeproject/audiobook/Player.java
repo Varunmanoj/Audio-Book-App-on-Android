@@ -127,12 +127,12 @@ public class Player extends AppCompatActivity {
         if (mp != null) {
             mp.stop();
         }
-
     }
 
     public void ReleaseMP() {
         if (mp != null) {
             mp.release();
+            mp = null;
         }
     }
 
