@@ -16,9 +16,9 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class Player extends AppCompatActivity {
-    TextView start,end;
+    TextView Percent;
     SeekBar sk;
-    ImageButton play,pause, stop;
+    ImageButton play;
     MediaPlayer mp;
 
     @Override
@@ -26,10 +26,7 @@ public class Player extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player);
         play = findViewById(R.id.imageButton);
-        pause = findViewById(R.id.imageButton2);
-        stop = findViewById(R.id.imageButton3);
-        start = findViewById(R.id.textView5);
-        end = findViewById(R.id.textView6);
+        Percent = findViewById(R.id.textView5);
         sk = findViewById(R.id.seekBar);
 
         mp = null;
@@ -41,18 +38,6 @@ public class Player extends AppCompatActivity {
             CreateAudio();
             mp.start();
             AutoMoveSeekBar();
-        });
-
-        pause.setOnClickListener(v -> {
-            PauseAudio();
-            Vibrate();
-
-        });
-
-        stop.setOnClickListener(v -> {
-            stopAudio();
-            Vibrate();
-
         });
     }
 

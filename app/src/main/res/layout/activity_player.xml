@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -25,81 +24,47 @@
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:backgroundTint="@color/purple_700"
+        android:layout_width="168dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="69dp"
+        android:backgroundTint="@color/ImgBackgroundColor"
         android:contentDescription="@string/PlayAudio"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton3"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton3"
-        app:layout_constraintHorizontal_bias="0.764"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageButton3"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ic_baseline_play_circle_filled_24" />
-
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:backgroundTint="@color/purple_700"
-        android:contentDescription="@string/PauseAudio"
-
-        android:src="@drawable/ic_baseline_pause_circle_filled_24"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageButton" />
-
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:backgroundTint="@color/purple_700"
-        android:contentDescription="@string/StopAudio"
-        android:src="@drawable/ic_baseline_stop_circle_24"
+        android:cropToPadding="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.905"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85" />
+        app:layout_constraintTop_toBottomOf="@+id/seekBar"
+        app:srcCompat="@drawable/ic_baseline_play_circle_filled_24" />
 
     <SeekBar
         android:id="@+id/seekBar"
         android:layout_width="309dp"
-        android:layout_height="19dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="68dp"
         android:contentDescription="@string/SeekBarDSC"
         android:foregroundTint="@color/splashScreenBG"
         android:indeterminateTint="@color/splashScreenBG"
         android:progressTint="@color/splashScreenBG"
         android:secondaryProgressTint="@color/splashScreenBG"
         android:thumbTint="@color/ImgBackgroundColor"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.559"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.609"
+        app:layout_constraintTop_toBottomOf="@+id/circleImageView"
         app:tickMarkTint="@color/ImgBackgroundColor" />
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="106dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="8dp"
         android:text="@string/_0_00"
+        android:textAlignment="center"
         android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/textView6"
-        app:layout_constraintHorizontal_bias="0.125"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/_0_00"
-        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.913"
+        app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/seekBar" />
 
