@@ -20,8 +20,9 @@ public class Player extends AppCompatActivity {
     SeekBar sk;
     ImageButton play;
     MediaPlayer mp;
-    int percentcomplete;
-    int getcurrentdurationtext;
+
+    int currentprogress;
+    int maxduration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,30 +61,34 @@ public class Player extends AppCompatActivity {
     public void AutoMoveSeekBar() {
 //Set the Max of the Seekbar to the Max duration of the audio file.
         sk.setMax(mp.getDuration());
-
+        maxduration = mp.getDuration();
+        currentprogress = mp.getCurrentPosition();
         //        Auto change SeekBar
         new Timer().scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
                 sk.setProgress(mp.getCurrentPosition());
-                getcurrentdurationtext = mp.getCurrentPosition() / 1000;
+
             }
         }, 0, 10);
 
+//Convert the value in to %
 
         sk.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            int currentprog;
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 if (fromUser) {
                     mp.seekTo(progress);
                 }
-                percentcomplete = progress;
-                Percent.setText("" + getcurrentdurationtext + " %");
+                currentprog = progress;
+
+                Percent.setText("" + currentprog + "%");
             }
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-                Percent.setText("" + getcurrentdurationtext + " %");
+                Percent.setText("" + currentprog + "%");
             }
 
             @Override
