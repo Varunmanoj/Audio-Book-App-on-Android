@@ -10,10 +10,15 @@
     <color name="ListSelecterColor">#005701</color>
 
     <!--    Image Button  Background Color-->
-    <color name="ImgBackgroundColor">#E8B6B6</color>
+    <color name="ImgBackgroundColor">#FFDA18</color>
+
+    <!--    Progress Text Color -->
+    <color name="Progresstextcolor">#FFFFFF</color>
 
     <!--    SeekBar background Color-->
-    <color name="SeekbarBackground">#0D3D91</color>
+    <color name="SeekbarBackground">#B8CAEA</color>
+    <color name="Seekbarprogressbarbg">#FB00C8</color>
+    <color name="SeekbarThumbcolor">#FFDA18</color>
 
     <!--    Splash Screen Colors-->
     <color name="splashScreenBG">#FF3700B3</color>

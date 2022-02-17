@@ -34,7 +34,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/seekBar"
-        app:srcCompat="@drawable/ic_baseline_play_circle_filled_24" />
+        app:srcCompat="@drawable/ic_baseline_play_circle_filled_24"
+        app:tint="@color/black" />
 
     <SeekBar
         android:id="@+id/seekBar"
@@ -42,17 +43,15 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="68dp"
         android:contentDescription="@string/SeekBarDSC"
-        android:foregroundTint="@color/splashScreenBG"
-        android:indeterminateTint="@color/splashScreenBG"
+        android:foregroundTint="@color/Seekbarprogressbarbg"
         android:progressTint="@color/splashScreenBG"
         android:secondaryProgressTint="@color/splashScreenBG"
-        android:thumbTint="@color/ImgBackgroundColor"
+        android:thumbTint="@color/SeekbarThumbcolor"
         app:layout_constraintBottom_toTopOf="@+id/imageButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.559"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/circleImageView"
-        app:tickMarkTint="@color/ImgBackgroundColor" />
+        app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
 
     <TextView
         android:id="@+id/textView5"
@@ -61,7 +60,9 @@
         android:layout_marginTop="8dp"
         android:text="@string/percent"
         android:textAlignment="center"
+        android:textColor="@color/Progresstextcolor"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/imageButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.468"

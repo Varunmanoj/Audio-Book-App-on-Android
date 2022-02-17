@@ -15,14 +15,20 @@
     <color name="ListSelecterColor">#ffeb3b</color>
 
     <!--    Image Button  Background Color-->
-    <color name="ImgBackgroundColor">#915959</color>
+    <color name="ImgBackgroundColor">#FFDA18</color>
 
     <!--    SeekBar background Color-->
     <color name="SeekbarBackground">#B8CAEA</color>
+    <color name="Seekbarprogressbarbg">#FF3700B3</color>
+    <color name="SeekbarThumbcolor">#FFDA18</color>
+
+    <!--    Progress Text Color -->
+    <color name="Progresstextcolor">#000000</color>
 
     <!--    Splash Screen Colors-->
 
-    <color name="splashScreenBG">#FF3700B3</color> #FF3700B3
+    <color name="splashScreenBG">#FF3700B3</color>
+    #FF3700B3
     <color name="SplashScreenTitleColor">#EEFF00</color>
     <color name="SplashScreenSloggenTextColor">#FFF200</color>
 </resources>
