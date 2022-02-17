@@ -23,7 +23,7 @@ public class Player extends AppCompatActivity {
 
     int currentprogress;
     int maxduration;
-
+    int percent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,8 +61,9 @@ public class Player extends AppCompatActivity {
     public void AutoMoveSeekBar() {
 //Set the Max of the Seekbar to the Max duration of the audio file.
         sk.setMax(mp.getDuration());
-        maxduration = mp.getDuration();
-        currentprogress = mp.getCurrentPosition();
+        maxduration = mp.getDuration() / 100;
+        currentprogress = mp.getCurrentPosition() / 100;
+
         //        Auto change SeekBar
         new Timer().scheduleAtFixedRate(new TimerTask() {
             @Override
@@ -82,13 +83,13 @@ public class Player extends AppCompatActivity {
                     mp.seekTo(progress);
                 }
                 currentprog = progress;
-
-                Percent.setText("" + currentprog + "%");
+                percent = currentprog / maxduration;
+                Percent.setText("" + percent + "%");
             }
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-                Percent.setText("" + currentprog + "%");
+                Percent.setText("" + percent + "%");
             }
 
             @Override
