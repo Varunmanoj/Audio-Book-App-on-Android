@@ -43,6 +43,9 @@
     <string name="SplashScreenTitle">HearMe</string>
     <string name="SplashScreenSlogen">Listen to enjoy. Listen to learn.</string>
     <string name="AppIconDsc">App Icon Here ME</string>
-    <string name="SplashScreenLoadingMSG">Loading Please Wait ...</string>
+    <string name="SplashScreenLoadingMSG">Loading Please Wait …</string>
     <string name="StopAudio">Stop Audio</string>
+
+    <!--    Percent Text View-->
+    <string name="percent">0 %</string>
 </resources>
