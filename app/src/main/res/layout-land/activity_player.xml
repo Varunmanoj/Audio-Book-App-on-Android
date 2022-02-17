@@ -36,7 +36,7 @@
         app:layout_constraintEnd_toEndOf="@+id/seekBar"
         app:layout_constraintStart_toStartOf="@+id/seekBar"
         app:layout_constraintTop_toBottomOf="@+id/seekBar"
-        app:srcCompat="@drawable/ic_baseline_play_circle_filled_24"
+        app:srcCompat="@drawable/playaudio"
         app:tint="@color/black" />
 
     <SeekBar

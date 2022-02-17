@@ -29,7 +29,7 @@ public class Book1Chapters extends AppCompatActivity {
         book1Chapter1List.setOnItemClickListener((parent, view, position, id) -> {
 
             //            Extract the text selected  by user in string
-            ReadText=book1Chapter1List.getItemAtPosition(position).toString();
+            ReadText = book1Chapter1List.getItemAtPosition(position).toString();
             SpeakSelection();
             Vibrate();
             //Click Listener for items
@@ -54,7 +54,7 @@ public class Book1Chapters extends AppCompatActivity {
                 mTTS.setLanguage(Locale.ENGLISH);
             }
 //                    Speak button click
-            mTTS.speak(ReadText, TextToSpeech.QUEUE_FLUSH, null,null);
+            mTTS.speak(ReadText, TextToSpeech.QUEUE_FLUSH, null, null);
         });
     }
 
@@ -94,7 +94,8 @@ public class Book1Chapters extends AppCompatActivity {
         super.onResume();
         CreateTTS();
     }
-    public  void CreateTTS(){
+
+    public void CreateTTS() {
         mTTS = new TextToSpeech(this, status -> {
             if (status == TextToSpeech.SUCCESS) {
                 mTTS.setLanguage(Locale.ENGLISH);

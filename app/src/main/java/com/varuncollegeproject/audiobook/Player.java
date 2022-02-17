@@ -24,6 +24,7 @@ public class Player extends AppCompatActivity {
     int currentprogress;
     int maxduration;
     int percent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,8 +40,17 @@ public class Player extends AppCompatActivity {
 
             Vibrate();
             CreateAudio();
-            mp.start();
-            AutoMoveSeekBar();
+            if (!mp.isPlaying()) {
+                StartAudio();
+                AutoMoveSeekBar();
+                play.setImageDrawable(getDrawable(R.drawable.pauseaudio));
+                play.setContentDescription(getString(R.string.PauseAudio));
+            } else {
+                PauseAudio();
+                play.setImageDrawable(getDrawable(R.drawable.playaudio));
+                play.setContentDescription(getString(R.string.PlayAudio));
+            }
+
         });
     }
 
@@ -77,6 +87,7 @@ public class Player extends AppCompatActivity {
 
         sk.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             int currentprog;
+
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 if (fromUser) {
@@ -109,6 +120,12 @@ public class Player extends AppCompatActivity {
         } else {
 //    Perform for API 26 and below
             vibrator.vibrate(200);
+        }
+    }
+
+    public void StartAudio() {
+        if (mp != null) {
+            mp.start();
         }
     }
 

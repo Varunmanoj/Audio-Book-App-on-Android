@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         Bookname.setOnItemClickListener((parent, view, position, id) -> {
 
 //                Extract the text selected  by user in string
-             Readtext = Bookname.getItemAtPosition(position).toString();
+            Readtext = Bookname.getItemAtPosition(position).toString();
 
             SpeakSelection();
             Vibrate();
@@ -61,14 +61,16 @@ public class MainActivity extends AppCompatActivity {
 
         });
     }
-    public  void CreateTTS(){
+
+    public void CreateTTS() {
         mTTS = new TextToSpeech(this, status -> {
             if (status == TextToSpeech.SUCCESS) {
                 mTTS.setLanguage(Locale.ENGLISH);
             }
         });
     }
-    public void Vibrate(){
+
+    public void Vibrate() {
         Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
         //Vibrate on click
         if (Build.VERSION.SDK_INT >= 26) {
@@ -79,32 +81,38 @@ public class MainActivity extends AppCompatActivity {
             vibrator.vibrate(200);
         }
     }
-    public void ReleaseTTS(){
+
+    public void ReleaseTTS() {
         //        Release resources if audio tts is not speaking
         if (!mTTS.isSpeaking()) {
             mTTS.stop();
         }
     }
+
     @Override
     protected void onStop() {
         super.onStop();
         ReleaseTTS();
     }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
         ReleaseTTS();
     }
+
     @Override
     protected void onResume() {
         super.onResume();
         CreateTTS();
     }
+
     @Override
     protected void onRestart() {
         super.onRestart();
         CreateTTS();
     }
+
     @Override
     protected void onStart() {
         super.onStart();

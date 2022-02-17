@@ -39,9 +39,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Book1Chapter1audio"
-            android:exported="false" />
-        <activity
             android:name=".Book2ChapterList"
             android:exported="false"
             android:label="@string/Book2"
