@@ -49,6 +49,8 @@ public class Player extends AppCompatActivity {
                 PauseAudio();
                 play.setImageDrawable(getDrawable(R.drawable.playaudio));
                 play.setContentDescription(getString(R.string.PlayAudio));
+
+
             }
 
         });
@@ -107,6 +109,14 @@ public class Player extends AppCompatActivity {
             public void onStopTrackingTouch(SeekBar seekBar) {
             }
         });
+
+        //                Change Pause button to play button on completion of song
+        if (mp != null) {
+            mp.setOnCompletionListener(mp -> {
+                play.setImageDrawable(getDrawable(R.drawable.playaudio));
+                play.setContentDescription(getString(R.string.PlayAudio));
+            });
+        }
     }
 
     public void Vibrate() {
