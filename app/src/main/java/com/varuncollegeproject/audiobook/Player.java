@@ -21,6 +21,7 @@ public class Player extends AppCompatActivity {
     ImageButton play;
     MediaPlayer mp;
 
+
     int currentprogress;
     int maxduration;
     int percent;
@@ -34,13 +35,13 @@ public class Player extends AppCompatActivity {
         sk = findViewById(R.id.seekBar);
 
         mp = null;
+        CreateAudio();
 
 //        Click buttons
         play.setOnClickListener(v -> {
-
             Vibrate();
-            CreateAudio();
             if (!mp.isPlaying()) {
+
                 StartAudio();
                 AutoMoveSeekBar();
                 play.setImageDrawable(getDrawable(R.drawable.pauseaudio));
@@ -133,6 +134,7 @@ public class Player extends AppCompatActivity {
         }
     }
 
+
     public void StartAudio() {
         if (mp != null) {
             mp.start();
@@ -177,6 +179,12 @@ public class Player extends AppCompatActivity {
     @Override
     protected void onRestart() {
         super.onRestart();
+        CreateAudio();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
         CreateAudio();
     }
 }

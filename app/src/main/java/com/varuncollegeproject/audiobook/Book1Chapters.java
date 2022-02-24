@@ -1,5 +1,6 @@
 package com.varuncollegeproject.audiobook;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ public class Book1Chapters extends AppCompatActivity {
     //    For TTS to work
     String ReadText;
     TextToSpeech mTTS;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,10 @@ public class Book1Chapters extends AppCompatActivity {
         book1Chapter1List = findViewById(R.id.Book1ChapterList);
         book1Chapter1List.setOnItemClickListener((parent, view, position, id) -> {
 
+            progressDialog = new ProgressDialog(this);
+            progressDialog.setTitle(getString(R.string.ProgressTitle));
+            progressDialog.setMessage(getString(R.string.ProgressMSG));
+
             //            Extract the text selected  by user in string
             ReadText = book1Chapter1List.getItemAtPosition(position).toString();
             SpeakSelection();
@@ -35,8 +41,8 @@ public class Book1Chapters extends AppCompatActivity {
             //Click Listener for items
             switch (position) {
                 case 0:
-
                     Intent MusicPlayerinter = new Intent(Book1Chapters.this, Player.class);
+                    progressDialog.show();
                     startActivity(MusicPlayerinter);
                     break;
                 case 1:

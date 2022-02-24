@@ -48,4 +48,8 @@
 
     <!--    Percent Text View-->
     <string name="percent">0 %</string>
+
+    <!--    Progress Indicator-->
+    <string name="ProgressTitle">Please Wait</string>
+    <string name="ProgressMSG">Loading</string>
 </resources>
