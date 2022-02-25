@@ -1,14 +1,20 @@
 package com.varuncollegeproject.audiobook;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
+import android.provider.Settings;
 import android.speech.tts.TextToSpeech;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Locale;
@@ -41,9 +47,13 @@ public class Book1Chapters extends AppCompatActivity {
             //Click Listener for items
             switch (position) {
                 case 0:
-                    Intent MusicPlayerinter = new Intent(Book1Chapters.this, Player.class);
-                    progressDialog.show();
-                    startActivity(MusicPlayerinter);
+                    if (!CheckConection()) {
+                        CreateDialog();
+                    } else {
+                        Intent MusicPlayerinter = new Intent(Book1Chapters.this, Player.class);
+                        progressDialog.show();
+                        startActivity(MusicPlayerinter);
+                    }
                     break;
                 case 1:
 
@@ -107,6 +117,31 @@ public class Book1Chapters extends AppCompatActivity {
                 mTTS.setLanguage(Locale.ENGLISH);
             }
         });
+    }
+
+    private void CreateDialog() {
+        AlertDialog.Builder dialog = new AlertDialog.Builder(Book1Chapters.this);
+        dialog.setTitle(R.string.ADTitle);
+        dialog.setMessage(R.string.AlertDialogMSG).setCancelable(false)
+                .setPositiveButton(R.string.ADPositive, (dialog1, which) -> {
+//                    Open the Wireless Settings Page on the Phone (Wifi and Mobile Data)
+                    startActivity(new Intent(Settings.ACTION_WIRELESS_SETTINGS));
+                })
+                .setNegativeButton(R.string.ADNegative, (dialog12, which) -> Toast.makeText(getApplicationContext(), "Please Connect to Internet", Toast.LENGTH_SHORT).show())
+                .show();
+
+
+    }
+
+    public Boolean CheckConection() {
+//        ConnectivityManager is used to check if phone is conected to Internet or not
+        ConnectivityManager connectivityManager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+
+//        NetworkInfo is used to check if phone is Connected to either WIFI or Mobile Data
+        NetworkInfo Wifistate = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+        NetworkInfo MobileState = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+
+        return ((Wifistate != null) && (Wifistate.isConnected())) || (MobileState != null) && MobileState.isConnected();
     }
 
     @Override

@@ -51,4 +51,10 @@
     <!--    Progress Indicator-->
     <string name="ProgressTitle">Please Wait</string>
     <string name="ProgressMSG">Loading</string>
+
+    <!--    Alert Dialog Text-->
+    <string name="ADTitle">Check Wifi</string>
+    <string name="AlertDialogMSG">Please Connect to the Internet</string>
+    <string name="ADPositive">Connect</string>
+    <string name="ADNegative">Cancel</string>
 </resources>

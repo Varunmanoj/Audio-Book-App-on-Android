@@ -40,6 +40,8 @@ public class Player extends AppCompatActivity {
 //        Click buttons
         play.setOnClickListener(v -> {
             Vibrate();
+            //        Show Doalog if Phone is not connected to Internet
+
             if (!mp.isPlaying()) {
 
                 StartAudio();
@@ -56,6 +58,7 @@ public class Player extends AppCompatActivity {
 
         });
     }
+
 
     public void CreateAudio() {
         String TitleURL = "https://firebasestorage.googleapis.com/v0/b/here-me-audio-book.appspot.com/o/Dickens_Carol%2Fdc_title.wav?alt=media&token=2b394dcd-98ce-4847-8170-3c55a6a4d1e9";
@@ -155,6 +158,7 @@ public class Player extends AppCompatActivity {
             mp.reset();
         }
     }
+
 
     public void ReleaseMP() {
         if (mp != null) {
