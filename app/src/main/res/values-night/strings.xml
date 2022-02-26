@@ -54,8 +54,14 @@
     <string name="ProgressMSG">Loading</string>
 
     <!--    Alert Dialog Text-->
-    <string name="ADTitle">Check Wifi</string>
+    <string name="ADTitle">Check Internet</string>
     <string name="AlertDialogMSG">Please Connect to the Internet</string>
     <string name="ADPositive">Connect</string>
     <string name="ADNegative">Cancel</string>
+
+    <!--    Exit Alert Dialog-->
+    <string name="ExitADTitle">Exit</string>
+    <string name="ExitADMSG">Are you sure you want to exit?</string>
+    <string name="ExitADPositive">Yes</string>
+    <string name="ExitADNegative">No</string>
 </resources>

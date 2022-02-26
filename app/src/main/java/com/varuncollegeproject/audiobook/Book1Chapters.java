@@ -56,7 +56,9 @@ public class Book1Chapters extends AppCompatActivity {
                     }
                     break;
                 case 1:
-
+                    if (!CheckConection()) {
+                        CreateDialog();
+                    }
                     break;
             }
         });

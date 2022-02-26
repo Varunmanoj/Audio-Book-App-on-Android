@@ -1,5 +1,6 @@
 package com.varuncollegeproject.audiobook;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.os.Vibrator;
 import android.speech.tts.TextToSpeech;
 import android.widget.ListView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Locale;
@@ -89,6 +91,16 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void ExitAlertDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.ExitADTitle)
+                .setMessage(R.string.ExitADMSG)
+                .setPositiveButton(R.string.ExitADPositive, (DialogInterface.OnClickListener) (dialog, which) -> finish())
+                .setNegativeButton(R.string.ExitADNegative, null)
+                .setIcon(R.drawable.exitapp)
+                .show();
+    }
+
     @Override
     protected void onStop() {
         super.onStop();
@@ -117,5 +129,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         CreateTTS();
+    }
+
+    @Override
+    public void onBackPressed() {
+        ExitAlertDialog();
     }
 }
