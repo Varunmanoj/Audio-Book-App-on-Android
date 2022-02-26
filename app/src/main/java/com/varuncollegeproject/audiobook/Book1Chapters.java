@@ -123,6 +123,7 @@ public class Book1Chapters extends AppCompatActivity {
         AlertDialog.Builder dialog = new AlertDialog.Builder(Book1Chapters.this);
         dialog.setTitle(R.string.ADTitle);
         dialog.setMessage(R.string.AlertDialogMSG).setCancelable(false)
+                .setIcon(R.drawable.wifioff)
                 .setPositiveButton(R.string.ADPositive, (dialog1, which) -> {
 //                    Open the Wireless Settings Page on the Phone (Wifi and Mobile Data)
                     startActivity(new Intent(Settings.ACTION_WIRELESS_SETTINGS));
