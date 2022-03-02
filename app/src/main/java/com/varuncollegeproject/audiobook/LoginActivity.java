@@ -53,6 +53,7 @@ public class LoginActivity extends AppCompatActivity {
 
         FP.setOnClickListener(v -> {
             Vibrate();
+            startActivity(new Intent(this, ForgotPasswordActivity.class));
         });
     }
 

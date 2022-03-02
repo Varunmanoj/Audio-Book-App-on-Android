@@ -83,4 +83,14 @@
     <string name="NewUser">Not registered yet?</string>
     <string name="RegisterHere">Register Nere</string>
     <string name="ForgotPass">Forgot Password</string>
+
+
+    <!--    Forgot Password -->
+    <string name="ScreenTitle">Forgot Password</string>
+    <string name="FPTitle">Forgot Password</string>
+    <string name="FPEmailhint">Email</string>
+    <string name="FPBTN">Reset Password</string>
+    <string name="FPEmailerror">Email can not be empty</string>
+    <string name="CheckEmail">Check your email for the password Reset Link</string>
+    <string name="Tryagain">Please Try Again</string>
 </resources>

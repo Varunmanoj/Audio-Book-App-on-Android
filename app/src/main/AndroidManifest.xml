@@ -22,6 +22,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AudioBook">
         <activity
+            android:name=".ForgotPasswordActivity"
+            android:exported="false"
+            android:label="@string/ForgotPass" />
+        <activity
             android:name=".LoginActivity"
             android:exported="false"
             android:label="@string/LoginScreenTitle" />
