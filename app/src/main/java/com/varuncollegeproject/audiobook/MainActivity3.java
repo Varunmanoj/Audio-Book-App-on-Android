@@ -68,7 +68,7 @@ public class MainActivity3 extends AppCompatActivity {
 
 //        Automatically move to the next home Screen
         new Handler().postDelayed(() -> {
-            Intent intent = new Intent(MainActivity3.this, MainActivity.class);
+            Intent intent = new Intent(MainActivity3.this, RegisterActivity.class);
             startActivity(intent);
             finish();
         }, 3000);

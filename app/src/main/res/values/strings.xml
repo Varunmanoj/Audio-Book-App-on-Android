@@ -63,4 +63,16 @@
     <string name="ExitADMSG">Are you sure you want to exit?</string>
     <string name="ExitADPositive">Yes</string>
     <string name="ExitADNegative">No</string>
+
+
+    <!--    Register Activity-->
+    <string name="RegisterScreenTitle">Register</string>
+    <string name="RegisterTitle">Register</string>
+    <string name="EmailHint">Email</string>
+    <string name="PasswordHint">Password</string>
+    <string name="RegisterBTN">Register</string>
+    <string name="AlreadyRegistered">Already Registered?</string>
+    <string name="LoginHere">Login Here</string>
+    <string name="EmailError">Email cannot be empty</string>
+    <string name="PasswordError">Password cannot be empty</string>
 </resources>

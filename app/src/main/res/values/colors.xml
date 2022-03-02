@@ -31,4 +31,7 @@
     #FF3700B3
     <color name="SplashScreenTitleColor">#EEFF00</color>
     <color name="SplashScreenSloggenTextColor">#FFF200</color>
+
+    <!--    Register Activity-->
+    <color name="LinkColor">#030396</color>
 </resources>

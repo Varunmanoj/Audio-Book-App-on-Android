@@ -26,7 +26,8 @@
             android:exported="false" />
         <activity
             android:name=".RegisterActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/RegisterScreenTitle" />
         <activity
             android:name=".Player"
             android:exported="false"
