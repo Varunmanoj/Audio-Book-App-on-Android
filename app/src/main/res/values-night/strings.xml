@@ -73,4 +73,14 @@
     <string name="RegisterBTN">Register</string>
     <string name="AlreadyRegistered">Already Registered?</string>
     <string name="LoginHere">Login Here</string>
+
+    <!--    Login Activity-->
+    <string name="LoginScreenTitle">Login </string>
+    <string name="LoginHeading">Login</string>
+    <string name="LoginEmailHint">Email</string>
+    <string name="LoginPasswordHint">Password</string>
+    <string name="LoginBTN">Login</string>
+    <string name="NewUser">Not registered yet?</string>
+    <string name="RegisterHere">Register Nere</string>
+    <string name="ForgotPass">Forgot Password</string>
 </resources>

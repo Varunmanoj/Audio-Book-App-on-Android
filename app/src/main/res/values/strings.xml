@@ -75,4 +75,16 @@
     <string name="LoginHere">Login Here</string>
     <string name="EmailError">Email cannot be empty</string>
     <string name="PasswordError">Password cannot be empty</string>
+
+    <!--    Login Activity-->
+    <string name="LoginScreenTitle">Login </string>
+    <string name="LoginHeading">Login</string>
+    <string name="LoginEmailHint">Email</string>
+    <string name="LoginPasswordHint">Password</string>
+    <string name="LoginBTN">Login</string>
+    <string name="NewUser">Not registered yet?</string>
+    <string name="RegisterHere">Register Nere</string>
+    <string name="ForgotPass">Forgot Password</string>
+    <string name="LoginEmailError">Email cannot be empty</string>
+    <string name="LoginPassworderror">Password cannot be empty</string>
 </resources>

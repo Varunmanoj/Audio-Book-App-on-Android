@@ -23,7 +23,8 @@
         android:theme="@style/Theme.AudioBook">
         <activity
             android:name=".LoginActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/LoginScreenTitle" />
         <activity
             android:name=".RegisterActivity"
             android:exported="false"

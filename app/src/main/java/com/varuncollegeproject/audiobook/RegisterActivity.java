@@ -4,7 +4,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.provider.Settings;
 import android.widget.Button;
 import android.widget.TextView;
@@ -39,6 +42,7 @@ public class RegisterActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         btnRegister.setOnClickListener(view -> {
+            Vibrate();
             if (!CheckConection()) {
                 CreateDialog();
             } else {
@@ -97,6 +101,20 @@ public class RegisterActivity extends AppCompatActivity {
                 .show();
 
 
+    }
+
+    public void Vibrate() {
+
+        //Vibrate on click
+        Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+
+        if (Build.VERSION.SDK_INT >= 26) {
+//    Perform forAPI  26 and above
+            vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE));
+        } else {
+//    Perform for API 26 and below
+            vibrator.vibrate(200);
+        }
     }
 
 }
