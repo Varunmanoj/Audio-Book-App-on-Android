@@ -36,11 +36,9 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         if (email.isEmpty()) {
             etemail.setError(getText(R.string.FPEmailerror));
             etemail.requestFocus();
-            return;
         } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             etemail.setError(getText(R.string.FPEmailerror));
             etemail.requestFocus();
-            return;
         } else {
             auth.sendPasswordResetEmail(email).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
