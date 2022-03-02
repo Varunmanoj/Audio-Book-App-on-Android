@@ -1,6 +1,5 @@
 package com.varuncollegeproject.audiobook;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -13,7 +12,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Locale;
 
@@ -105,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.ExitADTitle)
                 .setMessage(R.string.ExitADMSG)
-                .setPositiveButton(R.string.ExitADPositive, (DialogInterface.OnClickListener) (dialog, which) -> finish())
+                .setPositiveButton(R.string.ExitADPositive, (dialog, which) -> finish())
                 .setNegativeButton(R.string.ExitADNegative, null)
                 .setIcon(R.drawable.exitapp)
                 .show();
@@ -141,12 +139,5 @@ public class MainActivity extends AppCompatActivity {
         ExitAlertDialog();
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        FirebaseUser user = auth.getCurrentUser();
-        if (user == null) {
-            startActivity(new Intent(this, LoginActivity.class));
-        }
-    }
+
 }

@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     TextInputEditText etLoginPassword;
     TextView tvRegisterHere;
     Button btnLogin;
-
+    TextView FP;
     FirebaseAuth mAuth;
 
     @Override
@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         etLoginPassword = findViewById(R.id.etLoginPass);
         tvRegisterHere = findViewById(R.id.tvRegisterHere);
         btnLogin = findViewById(R.id.btnLogin);
-
+        FP = findViewById(R.id.fp);
         mAuth = FirebaseAuth.getInstance();
 
         btnLogin.setOnClickListener(view -> {
@@ -50,6 +50,10 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
         tvRegisterHere.setOnClickListener(view -> startActivity(new Intent(LoginActivity.this, RegisterActivity.class)));
+
+        FP.setOnClickListener(v -> {
+            Vibrate();
+        });
     }
 
     private void loginUser() {

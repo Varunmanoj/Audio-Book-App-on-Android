@@ -14,6 +14,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import java.util.Locale;
 import java.util.Objects;
 
@@ -24,7 +27,8 @@ public class MainActivity3 extends AppCompatActivity {
 
     String Readtext;
     TextToSpeech mTTS;
-
+    FirebaseAuth auth = FirebaseAuth.getInstance();
+    FirebaseUser user = auth.getCurrentUser();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,8 +60,13 @@ public class MainActivity3 extends AppCompatActivity {
 
 //        Automatically move to the next home Screen
         new Handler().postDelayed(() -> {
-            startActivity(new Intent(MainActivity3.this, MainActivity.class));
-            finish();
+            if (user != null) {
+                startActivity(new Intent(MainActivity3.this, MainActivity.class));
+                finish();
+            } else {
+                startActivity(new Intent(MainActivity3.this, LoginActivity.class));
+                finish();
+            }
         }, 3000);
 
     }

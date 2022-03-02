@@ -73,6 +73,7 @@
                 android:focusable="auto"
                 android:linksClickable="true"
                 android:padding="10sp"
+                android:soundEffectsEnabled="true"
                 android:text="@string/ForgotPass"
                 android:textColor="@color/LinkColor"
                 android:textSize="20sp"
