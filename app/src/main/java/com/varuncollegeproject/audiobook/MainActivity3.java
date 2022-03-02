@@ -14,9 +14,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-
 import java.util.Locale;
 import java.util.Objects;
 
@@ -27,9 +24,6 @@ public class MainActivity3 extends AppCompatActivity {
 
     String Readtext;
     TextToSpeech mTTS;
-    //    Firebase
-    FirebaseAuth auth;
-    FirebaseUser user;
 
 
     @Override
@@ -37,9 +31,6 @@ public class MainActivity3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main3);
-//      initialize Firebase
-        auth = FirebaseAuth.getInstance();
-        user = auth.getCurrentUser();
 
 
 //        Remove the Action Bathe Splash Screen

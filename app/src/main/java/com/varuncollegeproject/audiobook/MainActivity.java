@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     //    Firebase
     FirebaseAuth auth;
-    FirebaseUser user;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         auth = FirebaseAuth.getInstance();
-        user = auth.getCurrentUser();
+
 
         Bookname = findViewById(R.id.Bookname);
 //        Get  System Language of the system
@@ -145,8 +145,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         FirebaseUser user = auth.getCurrentUser();
-        if (user != null) {
-            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+        if (user == null) {
+            startActivity(new Intent(this, LoginActivity.class));
         }
     }
 }
