@@ -14,7 +14,11 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import java.util.Locale;
+import java.util.Objects;
 
 public class MainActivity3 extends AppCompatActivity {
     ImageView image;
@@ -23,21 +27,9 @@ public class MainActivity3 extends AppCompatActivity {
 
     String Readtext;
     TextToSpeech mTTS;
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Vibrate();
-        CreateTTS();
-        SpeakSelection();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Vibrate();
-        SpeakSelection();
-    }
+    //    Firebase
+    FirebaseAuth auth;
+    FirebaseUser user;
 
 
     @Override
@@ -45,8 +37,13 @@ public class MainActivity3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main3);
+//      initialize Firebase
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
+
+
 //        Remove the Action Bathe Splash Screen
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
 
         image = findViewById(R.id.imageView2);
         logo = findViewById(R.id.textView);
@@ -68,8 +65,7 @@ public class MainActivity3 extends AppCompatActivity {
 
 //        Automatically move to the next home Screen
         new Handler().postDelayed(() -> {
-            Intent intent = new Intent(MainActivity3.this, RegisterActivity.class);
-            startActivity(intent);
+            startActivity(new Intent(MainActivity3.this, MainActivity.class));
             finish();
         }, 3000);
 
@@ -112,8 +108,6 @@ public class MainActivity3 extends AppCompatActivity {
             mTTS.speak(Readtext, TextToSpeech.QUEUE_FLUSH, null, null);
         });
     }
-
-
     @Override
     protected void onStop() {
         super.onStop();
@@ -125,4 +119,20 @@ public class MainActivity3 extends AppCompatActivity {
         super.onDestroy();
         ReleaseTTS();
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Vibrate();
+        CreateTTS();
+        SpeakSelection();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Vibrate();
+        SpeakSelection();
+    }
+
 }

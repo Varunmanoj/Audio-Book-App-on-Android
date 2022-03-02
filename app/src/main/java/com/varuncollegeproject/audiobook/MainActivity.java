@@ -12,6 +12,9 @@ import android.widget.ListView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,10 +23,17 @@ public class MainActivity extends AppCompatActivity {
     String Readtext;
     TextToSpeech mTTS;
 
+    //    Firebase
+    FirebaseAuth auth;
+    FirebaseUser user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
 
         Bookname = findViewById(R.id.Bookname);
 //        Get  System Language of the system
@@ -125,14 +135,18 @@ public class MainActivity extends AppCompatActivity {
         CreateTTS();
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        CreateTTS();
-    }
 
     @Override
     public void onBackPressed() {
         ExitAlertDialog();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser user = auth.getCurrentUser();
+        if (user != null) {
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+        }
     }
 }
