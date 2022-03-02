@@ -27,4 +27,5 @@
 
     <!--    Register Activity-->
     <color name="LinkColor">#DB05FF</color>
+    <color name="RegisterloginTextcolor">#FFFFFF</color>
 </resources>

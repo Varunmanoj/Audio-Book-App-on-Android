@@ -25,7 +25,7 @@
             android:gravity="center_horizontal"
             android:linksClickable="false"
             android:text="@string/RegisterTitle"
-            android:textColor="@color/black"
+            android:textColor="@color/RegisterloginTextcolor"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -83,7 +83,7 @@
                 android:layout_height="wrap_content"
                 android:labelFor="@id/tvLoginHere"
                 android:text="@string/AlreadyRegistered"
-                android:textColor="@color/black"
+                android:textColor="@color/RegisterloginTextcolor"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
