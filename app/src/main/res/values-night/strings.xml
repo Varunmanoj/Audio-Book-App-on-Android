@@ -93,4 +93,9 @@
     <string name="FPEmailerror">Email can not be empty</string>
     <string name="CheckEmail">Check your email for the password Reset Link</string>
     <string name="Tryagain">Please Try Again</string>
+
+    <!--     Main options Menu -->
+    <string name="Logout">logout</string>
+    <string name="help">Help and Support</string>
+    <string name="Contact">Contact us</string>
 </resources>

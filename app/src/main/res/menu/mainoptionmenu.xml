@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/logout"
+        android:contentDescription="@string/Logout"
+        android:icon="@drawable/exitapp"
+        android:title="@string/Logout"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/helpandsupport"
+        android:title="@string/help"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/contactus"
+        android:title="@string/Contact" />
+    <item android:title="@string/AppTheme">
+        <menu>
+            <item
+                android:id="@+id/SystemDefault"
+                android:title="@string/System"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/light"
+                android:enabled="false"
+                android:title="@string/Light"
+                android:visible="false"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/Night"
+                android:title="@string/Night"
+                app:showAsAction="never" />
+        </menu>
+    </item>
+</menu>
