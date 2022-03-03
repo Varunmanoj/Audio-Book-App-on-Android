@@ -98,4 +98,11 @@
     <string name="Logout">logout</string>
     <string name="help">Help and Support</string>
     <string name="Contact">Contact us</string>
+    <string name="AppTheme">App Theme</string>
+    <string name="Light">Light</string>
+    <string name="Night">Dark</string>
+    <string name="System">System Default</string>
+    <string name="LogoutConfermTitle">Confirm Logout?</string>
+    <string name="LogoutConfermMSG">Are you sure you want to logout</string>
+    <string name="LogoutSuss">You have logout from the app</string>
 </resources>

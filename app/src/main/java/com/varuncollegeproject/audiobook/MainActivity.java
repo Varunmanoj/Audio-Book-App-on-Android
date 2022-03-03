@@ -6,10 +6,16 @@ import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.speech.tts.TextToSpeech;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -99,6 +105,16 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void LogoutConfermDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.LogoutConfermTitle)
+                .setMessage(R.string.LogoutConfermMSG)
+                .setPositiveButton(R.string.ExitADPositive, (dialog, which) -> Logout())
+                .setNegativeButton(R.string.ExitADNegative, null)
+                .setIcon(R.drawable.exitapp)
+                .show();
+    }
+
     public void ExitAlertDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.ExitADTitle)
@@ -108,6 +124,18 @@ public class MainActivity extends AppCompatActivity {
                 .setIcon(R.drawable.exitapp)
                 .show();
     }
+
+    private void Logout() {
+        auth.signOut();
+        Toast.makeText(this, R.string.LogoutSuss, Toast.LENGTH_SHORT).show();
+        Intent logoutintent = new Intent(this, LoginActivity.class);
+
+        //        Clear the Stack in memory and redirect the user to the login page on press of back button
+        logoutintent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        logoutintent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(logoutintent);
+    }
+
 
     @Override
     protected void onStop() {
@@ -137,6 +165,40 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         ExitAlertDialog();
+    }
+
+    //    options menu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.mainoptionmenu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.logout:
+                Vibrate();
+                LogoutConfermDialog();
+                break;
+            case R.id.light:
+                Vibrate();
+//                switch to Light Mode
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                break;
+            case R.id.Night:
+                Vibrate();
+//                switch to Dark Mode
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                break;
+            case R.id.SystemDefault:
+                Vibrate();
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 

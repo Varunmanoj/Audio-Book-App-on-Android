@@ -19,18 +19,20 @@
         <menu>
             <item
                 android:id="@+id/SystemDefault"
+                android:checkable="false"
+                android:icon="@drawable/systemdefault"
                 android:title="@string/System"
-                app:showAsAction="never" />
+                app:showAsAction="withText" />
             <item
                 android:id="@+id/light"
-                android:enabled="false"
+                android:icon="@drawable/lightmode"
                 android:title="@string/Light"
-                android:visible="false"
-                app:showAsAction="never" />
+                app:showAsAction="withText" />
             <item
                 android:id="@+id/Night"
+                android:icon="@drawable/nightmode"
                 android:title="@string/Night"
-                app:showAsAction="never" />
+                app:showAsAction="withText" />
         </menu>
     </item>
 </menu>
