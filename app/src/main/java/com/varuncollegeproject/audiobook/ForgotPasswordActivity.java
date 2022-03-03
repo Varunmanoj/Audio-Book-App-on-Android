@@ -1,7 +1,10 @@
 package com.varuncollegeproject.audiobook;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.util.Patterns;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,6 +30,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
 
 
         Resetpassbtn.setOnClickListener(v -> {
+            Vibrate();
             Resetpassword();
         });
     }
@@ -48,6 +52,20 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                     Toast.makeText(ForgotPasswordActivity.this, R.string.Tryagain, Toast.LENGTH_SHORT).show();
                 }
             });
+        }
+    }
+
+    public void Vibrate() {
+
+        //Vibrate on click
+        Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+
+        if (Build.VERSION.SDK_INT >= 26) {
+//    Perform forAPI  26 and above
+            vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE));
+        } else {
+//    Perform for API 26 and below
+            vibrator.vibrate(200);
         }
     }
 }
