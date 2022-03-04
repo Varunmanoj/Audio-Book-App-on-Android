@@ -110,4 +110,12 @@
     <string name="LogoutConfermTitle">Confirm Logout?</string>
     <string name="LogoutConfermMSG">Are you sure you want to logout</string>
     <string name="LogoutSuss">You have logout from the app</string>
+
+
+    <!--    Contact us -->
+    <string name="ContactTitle">Contact us</string>
+    <!--    Help and Support-->
+    <string name="helpTitle">Help and Support</string>
+
+
 </resources>

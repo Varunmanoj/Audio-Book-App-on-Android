@@ -23,10 +23,12 @@
         android:theme="@style/Theme.AudioBook">
         <activity
             android:name=".Contactus"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/ContactTitle" />
         <activity
             android:name=".Help"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/helpTitle" />
         <activity
             android:name=".ForgotPasswordActivity"
             android:exported="false"
