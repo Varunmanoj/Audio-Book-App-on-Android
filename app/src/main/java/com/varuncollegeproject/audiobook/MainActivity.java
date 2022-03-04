@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     ListView Bookname;
     //    For TTS to work
     String Readtext;
+    String ReadMoreoptionsMenu;
     TextToSpeech mTTS;
 
     //    Firebase
@@ -178,6 +179,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+//        Read out the selected option
+        ReadMoreoptionsMenu = item.getTitle().toString();
+        mTTS.speak(ReadMoreoptionsMenu, TextToSpeech.QUEUE_FLUSH, null, null);
         switch (item.getItemId()) {
             case R.id.logout:
                 Vibrate();
@@ -197,6 +202,12 @@ public class MainActivity extends AppCompatActivity {
                 Vibrate();
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
                 break;
+            case R.id.helpandsupport:
+                Vibrate();
+                startActivity(new Intent(this, Help.class));
+            case R.id.contactus:
+                Vibrate();
+                startActivity(new Intent(this, Contactus.class));
         }
         return super.onOptionsItemSelected(item);
     }

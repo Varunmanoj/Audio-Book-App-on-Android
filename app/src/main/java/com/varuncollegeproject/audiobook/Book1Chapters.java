@@ -17,6 +17,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.util.Locale;
 
 public class Book1Chapters extends AppCompatActivity {
@@ -27,6 +29,9 @@ public class Book1Chapters extends AppCompatActivity {
     TextToSpeech mTTS;
     ProgressDialog progressDialog;
 
+    //    Firebase Variable
+    FirebaseAuth auth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +40,7 @@ public class Book1Chapters extends AppCompatActivity {
 //        Link Java and XML
         book1Chapter1List = findViewById(R.id.Book1ChapterList);
         book1Chapter1List.setOnItemClickListener((parent, view, position, id) -> {
+            auth = FirebaseAuth.getInstance();
 
             progressDialog = new ProgressDialog(this);
             progressDialog.setTitle(getString(R.string.ProgressTitle));
@@ -147,6 +153,28 @@ public class Book1Chapters extends AppCompatActivity {
         return ((Wifistate != null) && (Wifistate.isConnected())) || (MobileState != null) && MobileState.isConnected();
     }
 
+
+    public void LogoutConfermDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.LogoutConfermTitle)
+                .setMessage(R.string.LogoutConfermMSG)
+                .setPositiveButton(R.string.ExitADPositive, (dialog, which) -> Logout())
+                .setNegativeButton(R.string.ExitADNegative, null)
+                .setIcon(R.drawable.exitapp)
+                .show();
+    }
+
+    private void Logout() {
+        auth.signOut();
+        Toast.makeText(this, R.string.LogoutSuss, Toast.LENGTH_SHORT).show();
+        Intent logoutintent = new Intent(this, LoginActivity.class);
+
+        //        Clear the Stack in memory and redirect the user to the login page on press of back button
+        logoutintent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        logoutintent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(logoutintent);
+    }
+
     @Override
     protected void onRestart() {
         super.onRestart();
@@ -158,4 +186,6 @@ public class Book1Chapters extends AppCompatActivity {
         super.onStart();
         CreateTTS();
     }
+
+
 }

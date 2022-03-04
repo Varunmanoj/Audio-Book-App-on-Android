@@ -22,6 +22,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AudioBook">
         <activity
+            android:name=".Contactus"
+            android:exported="false" />
+        <activity
+            android:name=".Help"
+            android:exported="false" />
+        <activity
             android:name=".ForgotPasswordActivity"
             android:exported="false"
             android:label="@string/ForgotPass" />
@@ -41,7 +47,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
-
         <activity
             android:name=".MainActivity3"
             android:description="@string/SplashScreenAppScreenName"
