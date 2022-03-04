@@ -103,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
         //        Release resources if audio tts is not speaking
         if (!mTTS.isSpeaking()) {
             mTTS.stop();
+            mTTS.shutdown();
         }
     }
 
