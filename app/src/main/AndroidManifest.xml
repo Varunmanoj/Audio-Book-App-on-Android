@@ -24,11 +24,13 @@
         <activity
             android:name=".Contactus"
             android:exported="false"
-            android:label="@string/ContactTitle" />
+            android:label="@string/ContactTitle"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Help"
             android:exported="false"
-            android:label="@string/helpTitle" />
+            android:label="@string/helpTitle"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ForgotPasswordActivity"
             android:exported="false"

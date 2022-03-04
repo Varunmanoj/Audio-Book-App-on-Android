@@ -35,4 +35,7 @@
     <!--    Registe and login  Activity-->
     <color name="LinkColor">#030396</color>
     <color name="RegisterloginTextcolor">#000000</color>
+
+    <!--    Contact Activity -->
+
 </resources>

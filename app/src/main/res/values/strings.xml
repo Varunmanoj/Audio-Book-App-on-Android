@@ -116,6 +116,14 @@
     <string name="ContactTitle">Contact us</string>
     <!--    Help and Support-->
     <string name="helpTitle">Help and Support</string>
+    <string name="TextDetails">This app has been made as a part of the Android project for SY-BSC-IT. This app ahs been made by Varun Manoj Kumar, Salvin Suraj and Ankit Prakash.</string>
+    <string name="Email">Varun E-mail: varun.kumar@xaviers.edu.in \n
+    Salvin EMail: salvin.thomas@xaviers.edu.in \n
+    Ankit Prakash: ankit.prakash@xaviers.edu.in \n\n
+        Varun Phone: +91 8369506195 \n
+        Salvin Phone: +91 98472 08543 \n
+        Ankit Phone: +91 93215 53724 \n
+    </string>
 
 
 </resources>
