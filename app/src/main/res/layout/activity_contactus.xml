@@ -41,8 +41,8 @@
 
     <TextView
         android:id="@+id/varunEmail"
-        android:layout_width="302dp"
-        android:layout_height="257dp"
+        android:layout_width="321dp"
+        android:layout_height="312dp"
         android:layout_marginStart="44dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="68dp"
@@ -55,21 +55,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="94dp"
-        android:layout_height="67dp"
-        android:layout_marginTop="20dp"
-        android:clickable="true"
-        android:contentDescription="@string/PlayAudio"
-        android:focusable="true"
-        android:soundEffectsEnabled="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
-        app:layout_constraintVertical_bias="0.902"
-        app:srcCompat="@drawable/playaudio"
-        app:tint="@color/RegisterloginTextcolor" />
 </androidx.constraintlayout.widget.ConstraintLayout>
