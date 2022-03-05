@@ -22,6 +22,7 @@
             android:layout_marginVertical="16dp"
             android:accessibilityHeading="true"
             android:clickable="false"
+            android:ellipsize="end"
             android:gravity="center_horizontal"
             android:linksClickable="false"
             android:text="@string/RegisterTitle"
@@ -40,11 +41,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/email"
+                android:ellipsize="end"
                 android:hint="@string/EmailHint"
                 android:inputType="textEmailAddress"
-                android:textStyle="bold"
 
-                />
+                android:textStyle="bold" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -59,6 +60,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/password"
+                android:ellipsize="end"
                 android:hint="@string/PasswordHint"
                 android:inputType="textPassword"
                 android:textStyle="bold" />
@@ -69,6 +71,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
+            android:ellipsize="end"
             android:text="@string/RegisterBTN" />
 
         <LinearLayout
@@ -81,6 +84,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:ellipsize="end"
                 android:labelFor="@id/tvLoginHere"
                 android:text="@string/AlreadyRegistered"
                 android:textColor="@color/black"
@@ -93,6 +97,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:clickable="false"
+                android:ellipsize="end"
                 android:focusable="auto"
                 android:linksClickable="true"
                 android:soundEffectsEnabled="true"
