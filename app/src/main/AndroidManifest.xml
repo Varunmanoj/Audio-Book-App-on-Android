@@ -22,6 +22,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AudioBook">
         <activity
+            android:name=".DCTitle"
+            android:exported="false"
+            android:label="@string/Transcripttitle"
+            android:parentActivityName=".Player" />
+
+        <activity
             android:name=".Contactus"
             android:exported="false"
             android:label="@string/ContactTitle"

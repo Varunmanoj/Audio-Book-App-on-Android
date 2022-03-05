@@ -50,6 +50,7 @@
         android:layout_marginEnd="68dp"
         android:autoLink="web|phone|email"
         android:ellipsize="end"
+        android:hapticFeedbackEnabled="true"
         android:scrollbars="horizontal|vertical"
         android:text="@string/Email"
         android:textColor="@color/Progresstextcolor"

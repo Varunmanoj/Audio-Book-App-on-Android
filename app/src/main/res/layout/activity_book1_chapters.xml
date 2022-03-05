@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/BackgroundColor"
+    android:hapticFeedbackEnabled="true"
     tools:context="com.varuncollegeproject.audiobook.Book1Chapters">
 
     <ListView
@@ -12,6 +13,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:entries="@array/Book1ChaptersList"
+        android:hapticFeedbackEnabled="true"
         android:listSelector="@color/ListSelecterColor"
         android:scrollbars="vertical"
         android:visibility="visible"

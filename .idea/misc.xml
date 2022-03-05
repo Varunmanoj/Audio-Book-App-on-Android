@@ -25,6 +25,7 @@
         <entry key="..\:/Users/varun/AndroidStudioProjects/Audio-Book-App-on-Android/app/src/main/res/layout/activity_book1_chapters.xml" value="0.13697916666666668" />
         <entry key="..\:/Users/varun/AndroidStudioProjects/Audio-Book-App-on-Android/app/src/main/res/layout/activity_book2_chapter_list.xml" value="0.1" />
         <entry key="..\:/Users/varun/AndroidStudioProjects/Audio-Book-App-on-Android/app/src/main/res/layout/activity_contactus.xml" value="0.165" />
+        <entry key="..\:/Users/varun/AndroidStudioProjects/Audio-Book-App-on-Android/app/src/main/res/layout/activity_dctitle.xml" value="0.25" />
         <entry key="..\:/Users/varun/AndroidStudioProjects/Audio-Book-App-on-Android/app/src/main/res/layout/activity_forgot_password.xml" value="0.3704225352112676" />
         <entry key="..\:/Users/varun/AndroidStudioProjects/Audio-Book-App-on-Android/app/src/main/res/layout/activity_help.xml" value="0.14114583333333333" />
         <entry key="..\:/Users/varun/AndroidStudioProjects/Audio-Book-App-on-Android/app/src/main/res/layout/activity_login.xml" value="0.25" />
@@ -33,7 +34,7 @@
         <entry key="..\:/Users/varun/AndroidStudioProjects/Audio-Book-App-on-Android/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/Users/varun/AndroidStudioProjects/Audio-Book-App-on-Android/app/src/main/res/layout/uiscreen.xml" value="0.1" />
         <entry key="..\:/Users/varun/AndroidStudioProjects/Audio-Book-App-on-Android/app/src/main/res/menu/mainoptionmenu.xml" value="0.25" />
-        <entry key="..\:/Users/varun/AndroidStudioProjects/Audio-Book-App-on-Android/app/src/main/res/menu/playeroptionsmenu.xml" value="0.1" />
+        <entry key="..\:/Users/varun/AndroidStudioProjects/Audio-Book-App-on-Android/app/src/main/res/menu/playeroptionsmenu.xml" value="0.375" />
         <entry key="app/src/main/res/layout-land/activity_player.xml" value="0.327027027027027" />
         <entry key="app/src/main/res/layout/activity_book1_chapter1audio.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_book1_chapters.xml" value="0.1890625" />

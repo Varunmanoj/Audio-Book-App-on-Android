@@ -125,5 +125,9 @@
         Ankit Phone: +91 93215 53724 \n
     </string>
 
+    <!--    Player Menu -->
+    <string name="Transcript">Open Transcript</string>
 
+    <!--    Transcript String-->
+    <string name="Transcripttitle">Transcript</string>
 </resources>
