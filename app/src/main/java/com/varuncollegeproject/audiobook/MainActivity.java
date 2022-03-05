@@ -206,6 +206,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.helpandsupport:
                 Vibrate();
                 startActivity(new Intent(this, Help.class));
+                break;
             case R.id.contactus:
                 Vibrate();
                 startActivity(new Intent(this, Contactus.class));
