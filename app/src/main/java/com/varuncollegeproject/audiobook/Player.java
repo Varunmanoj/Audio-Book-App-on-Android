@@ -159,26 +159,12 @@ public class Player extends AppCompatActivity {
         }
     }
 
-
-    public void ReleaseMP() {
-        if (mp != null) {
-            mp.release();
-            mp = null;
-        }
-    }
-
     @Override
     protected void onStop() {
         super.onStop();
-        ReleaseMP();
+        stopAudio();
     }
 
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        ReleaseMP();
-    }
 
     @Override
     protected void onRestart() {
