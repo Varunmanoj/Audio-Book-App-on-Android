@@ -1,10 +1,14 @@
 package com.varuncollegeproject.audiobook;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
+import android.provider.Settings;
 import android.speech.tts.TextToSpeech;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -107,6 +111,32 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public Boolean CheckConection() {
+//        ConnectivityManager is used to check if phone is conected to Internet or not
+        ConnectivityManager connectivityManager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+
+//        NetworkInfo is used to check if phone is Connected to either WIFI or Mobile Data
+        NetworkInfo Wifistate = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+        NetworkInfo MobileState = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+
+        return ((Wifistate != null) && (Wifistate.isConnected())) || (MobileState != null) && MobileState.isConnected();
+    }
+
+    private void CreateDialog() {
+        AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
+        dialog.setTitle(R.string.ADTitle);
+        dialog.setMessage(R.string.AlertDialogMSG).setCancelable(false)
+                .setIcon(R.drawable.wifioff)
+                .setPositiveButton(R.string.ADPositive, (dialog1, which) -> {
+//                    Open the Wireless Settings Page on the Phone (Wifi and Mobile Data)
+                    startActivity(new Intent(Settings.ACTION_WIRELESS_SETTINGS));
+                })
+                .setNegativeButton(R.string.ADNegative, (dialog12, which) -> Toast.makeText(getApplicationContext(), "Please Connect to Internet", Toast.LENGTH_SHORT).show())
+                .show();
+
+
+    }
+
     public void LogoutConfermDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.LogoutConfermTitle)
@@ -205,7 +235,11 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.helpandsupport:
                 Vibrate();
-                startActivity(new Intent(this, Help.class));
+                if (!CheckConection()) {
+                    CreateDialog();
+                } else {
+                    startActivity(new Intent(this, Help.class));
+                }
                 break;
             case R.id.contactus:
                 Vibrate();
@@ -213,6 +247,4 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-
 }
