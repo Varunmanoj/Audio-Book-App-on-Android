@@ -12,8 +12,8 @@
 
     <ScrollView
         android:id="@+id/scrollView3"
-        android:layout_width="603dp"
-        android:layout_height="281dp"
+        android:layout_width="match_parent"
+        android:layout_height="440dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
@@ -25,13 +25,11 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="25dp"
             android:fadeScrollbars="true"
-            android:orientation="vertical"
-            android:scrollbars="vertical"
-            android:verticalScrollbarPosition="defaultPosition">
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
