@@ -10,126 +10,119 @@
     android:padding="24dp"
     tools:context=".RegisterActivity">
 
-    <ScrollView
-        android:id="@+id/scrollView3"
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="440dp"
-        android:layout_marginStart="24dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="131dp"
+        android:fadeScrollbars="true"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="16dp"
+            android:accessibilityHeading="true"
+            android:clickable="false"
+            android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:linksClickable="false"
+            android:scrollHorizontally="true"
+            android:text="@string/RegisterTitle"
+            android:textColor="@color/Progresstextcolor"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:addStatesFromChildren="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etRegEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/email"
+                android:ellipsize="end"
+                android:hint="@string/EmailHint"
+                android:inputType="textEmailAddress"
+
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etRegPass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/password"
+                android:ellipsize="end"
+                android:hint="@string/PasswordHint"
+                android:inputType="textPassword"
+                android:scrollHorizontally="true"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/resetpassbtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:ellipsize="end"
+            android:scrollHorizontally="true"
+            android:text="@string/RegisterBTN" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="25dp"
-            android:fadeScrollbars="true"
-            android:orientation="vertical">
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="20dp">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="16dp"
-                android:accessibilityHeading="true"
-                android:clickable="false"
                 android:ellipsize="end"
-                android:gravity="center_horizontal"
-                android:linksClickable="false"
+                android:labelFor="@id/tvLoginHere"
                 android:scrollHorizontally="true"
-                android:text="@string/RegisterTitle"
+                android:text="@string/AlreadyRegistered"
                 android:textColor="@color/RegisterloginTextcolor"
-                android:textSize="30sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
-
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/tvLoginHere"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:addStatesFromChildren="true">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etRegEmail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/email"
-                    android:ellipsize="end"
-                    android:hint="@string/EmailHint"
-                    android:inputType="textEmailAddress"
-
-                    android:textStyle="bold" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etRegPass"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/password"
-                    android:ellipsize="end"
-                    android:hint="@string/PasswordHint"
-                    android:inputType="textPassword"
-                    android:scrollHorizontally="true"
-                    android:textStyle="bold" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/resetpassbtn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginStart="8dp"
+                android:clickable="false"
                 android:ellipsize="end"
+                android:focusable="auto"
+                android:linksClickable="true"
                 android:scrollHorizontally="true"
-                android:text="@string/RegisterBTN" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="20dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:labelFor="@id/tvLoginHere"
-                    android:scrollHorizontally="true"
-                    android:text="@string/AlreadyRegistered"
-                    android:textColor="@color/RegisterloginTextcolor"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tvLoginHere"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:clickable="false"
-                    android:ellipsize="end"
-                    android:focusable="auto"
-                    android:linksClickable="true"
-                    android:scrollHorizontally="true"
-                    android:soundEffectsEnabled="true"
-                    android:text="@string/LoginHere"
-                    android:textColor="@color/LinkColor"
-                    android:textSize="34sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
+                android:soundEffectsEnabled="true"
+                android:text="@string/LoginHere"
+                android:textColor="@color/LinkColor"
+                android:textSize="34sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
-    </ScrollView>
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
