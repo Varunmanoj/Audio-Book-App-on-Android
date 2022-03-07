@@ -45,6 +45,7 @@
                     android:ellipsize="end"
                     android:hint="@string/LoginEmailHint"
                     android:inputType="textEmailAddress"
+                    android:selectAllOnFocus="true"
                     android:textColor="@color/black"
                     android:textColorHint="@color/RegisterloginTextcolor"
                     android:textStyle="bold" />
@@ -66,6 +67,7 @@
                     android:hint="@string/LoginPasswordHint"
                     android:inputType="textPassword"
                     android:scrollHorizontally="true"
+                    android:selectAllOnFocus="true"
                     android:textColorHint="@color/RegisterloginTextcolor"
                     android:textStyle="bold" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -106,6 +108,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:labelFor="@id/tvRegisterHere"
                     android:scrollHorizontally="true"
                     android:text="@string/NewUser"
                     android:textColor="@color/RegisterloginTextcolor"
