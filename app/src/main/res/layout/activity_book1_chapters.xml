@@ -12,6 +12,7 @@
         android:id="@+id/Book1ChapterList"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:drawSelectorOnTop="false"
         android:entries="@array/Book1ChaptersList"
         android:hapticFeedbackEnabled="true"
         android:listSelector="@color/ListSelecterColor"

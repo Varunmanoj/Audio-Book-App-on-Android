@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,19 +9,12 @@
     android:padding="24dp"
     tools:context=".RegisterActivity">
 
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="131dp"
-        android:fadeScrollbars="true"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginTop="25dp"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
@@ -35,7 +27,7 @@
             android:linksClickable="false"
             android:scrollHorizontally="true"
             android:text="@string/RegisterTitle"
-            android:textColor="@color/Progresstextcolor"
+            android:textColor="@color/RegisterloginTextcolor"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -52,10 +44,12 @@
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/email"
                 android:ellipsize="end"
+                android:fadeScrollbars="true"
                 android:hint="@string/EmailHint"
-                android:inputType="textEmailAddress"
 
-                android:selectAllOnFocus="true"
+                android:inputType="textEmailAddress"
+                android:scrollbars="horizontal"
+                android:textColorHint="@color/RegisterloginTextcolor"
                 android:textStyle="bold" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -72,10 +66,12 @@
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/password"
                 android:ellipsize="end"
+                android:fadeScrollbars="true"
                 android:hint="@string/PasswordHint"
                 android:inputType="textPassword"
+                android:scrollbars="horizontal"
                 android:scrollHorizontally="true"
-                android:selectAllOnFocus="true"
+                android:textColorHint="@color/RegisterloginTextcolor"
                 android:textStyle="bold" />
         </com.google.android.material.textfield.TextInputLayout>
 

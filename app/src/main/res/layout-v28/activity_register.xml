@@ -26,7 +26,7 @@
             android:gravity="center_horizontal"
             android:linksClickable="false"
             android:text="@string/RegisterTitle"
-            android:textColor="@color/black"
+            android:textColor="@color/RegisterloginTextcolor"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -42,10 +42,11 @@
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/email"
                 android:ellipsize="end"
+                android:fadeScrollbars="true"
                 android:hint="@string/EmailHint"
-                android:inputType="textEmailAddress"
 
-                android:selectAllOnFocus="true"
+                android:inputType="textEmailAddress"
+                android:scrollbars="horizontal"
                 android:textStyle="bold" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -62,9 +63,10 @@
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/password"
                 android:ellipsize="end"
+                android:fadeScrollbars="true"
                 android:hint="@string/PasswordHint"
                 android:inputType="textPassword"
-                android:selectAllOnFocus="true"
+                android:scrollbars="horizontal"
                 android:textStyle="bold" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -89,7 +91,7 @@
                 android:ellipsize="end"
                 android:labelFor="@id/tvLoginHere"
                 android:text="@string/AlreadyRegistered"
-                android:textColor="@color/black"
+                android:textColor="@color/RegisterloginTextcolor"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
