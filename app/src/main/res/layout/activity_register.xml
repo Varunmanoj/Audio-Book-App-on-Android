@@ -44,9 +44,12 @@
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/email"
                 android:ellipsize="end"
+                android:fadeScrollbars="true"
                 android:hint="@string/EmailHint"
-                android:inputType="textEmailAddress"
 
+                android:inputType="textEmailAddress"
+                android:scrollbars="horizontal"
+                android:textColorHint="@color/RegisterloginTextcolor"
                 android:textStyle="bold" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -63,9 +66,12 @@
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/password"
                 android:ellipsize="end"
+                android:fadeScrollbars="true"
                 android:hint="@string/PasswordHint"
                 android:inputType="textPassword"
+                android:scrollbars="horizontal"
                 android:scrollHorizontally="true"
+                android:textColorHint="@color/RegisterloginTextcolor"
                 android:textStyle="bold" />
         </com.google.android.material.textfield.TextInputLayout>
 

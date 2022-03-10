@@ -45,7 +45,7 @@
                     android:ellipsize="end"
                     android:hint="@string/LoginEmailHint"
                     android:inputType="textEmailAddress"
-                    android:textColor="@color/black"
+                    android:selectAllOnFocus="true"
                     android:textColorHint="@color/RegisterloginTextcolor"
                     android:textStyle="bold" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -66,6 +66,7 @@
                     android:hint="@string/LoginPasswordHint"
                     android:inputType="textPassword"
                     android:scrollHorizontally="true"
+                    android:selectAllOnFocus="true"
                     android:textColorHint="@color/RegisterloginTextcolor"
                     android:textStyle="bold" />
             </com.google.android.material.textfield.TextInputLayout>

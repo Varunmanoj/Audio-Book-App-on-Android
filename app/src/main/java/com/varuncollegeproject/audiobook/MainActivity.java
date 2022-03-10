@@ -133,8 +133,6 @@ public class MainActivity extends AppCompatActivity {
                 })
                 .setNegativeButton(R.string.ADNegative, (dialog12, which) -> Toast.makeText(getApplicationContext(), "Please Connect to Internet", Toast.LENGTH_SHORT).show())
                 .show();
-
-
     }
 
     public void LogoutConfermDialog() {
@@ -142,16 +140,6 @@ public class MainActivity extends AppCompatActivity {
         builder.setTitle(R.string.LogoutConfermTitle)
                 .setMessage(R.string.LogoutConfermMSG)
                 .setPositiveButton(R.string.ExitADPositive, (dialog, which) -> Logout())
-                .setNegativeButton(R.string.ExitADNegative, null)
-                .setIcon(R.drawable.exitapp)
-                .show();
-    }
-
-    public void ExitAlertDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(R.string.ExitADTitle)
-                .setMessage(R.string.ExitADMSG)
-                .setPositiveButton(R.string.ExitADPositive, (dialog, which) -> finish())
                 .setNegativeButton(R.string.ExitADNegative, null)
                 .setIcon(R.drawable.exitapp)
                 .show();
@@ -168,6 +156,15 @@ public class MainActivity extends AppCompatActivity {
         startActivity(logoutintent);
     }
 
+    public void ExitAlertDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.ExitADTitle)
+                .setMessage(R.string.ExitADMSG)
+                .setPositiveButton(R.string.ExitADPositive, (dialog, which) -> finish())
+                .setNegativeButton(R.string.ExitADNegative, null)
+                .setIcon(R.drawable.exitapp)
+                .show();
+    }
 
     @Override
     protected void onStop() {
@@ -202,7 +199,6 @@ public class MainActivity extends AppCompatActivity {
     //    options menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.mainoptionmenu, menu);
         return super.onCreateOptionsMenu(menu);

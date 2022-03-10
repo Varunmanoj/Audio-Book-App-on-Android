@@ -10,11 +10,16 @@
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/helpandsupport"
+        android:contentDescription="@string/help"
+        android:icon="@drawable/help"
         android:title="@string/help"
-        app:showAsAction="never" />
+        app:showAsAction="withText" />
     <item
         android:id="@+id/contactus"
-        android:title="@string/Contact" />
+        android:contentDescription="@string/Contact"
+        android:icon="@drawable/contactpage"
+        android:title="@string/Contact"
+        app:showAsAction="withText" />
     <item android:title="@string/AppTheme">
         <menu>
             <item
