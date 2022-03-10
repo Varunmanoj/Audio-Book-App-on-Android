@@ -40,7 +40,7 @@ public class Player extends AppCompatActivity {
 //        Click buttons
         play.setOnClickListener(v -> {
             Vibrate();
-            //        Show Doalog if Phone is not connected to Internet
+            //        Show Dialog if Phone is not connected to Internet
 
             if (!mp.isPlaying()) {
 
