@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/BackgroundColor"
+    tools:context=".Contactus">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="295dp"
+        android:layout_height="38dp"
+        android:accessibilityHeading="true"
+        android:ellipsize="end"
+        android:text="@string/Contact"
+        android:textAlignment="center"
+        android:textColor="@color/RegisterloginTextcolor"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="324dp"
+        android:layout_height="76dp"
+        android:ellipsize="end"
+        android:text="@string/TextDetails"
+        android:textAlignment="gravity"
+        android:textColor="@color/RegisterloginTextcolor"
+        android:textStyle="normal"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/varunEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.808" />
+
+    <TextView
+        android:id="@+id/varunEmail"
+        android:layout_width="321dp"
+        android:layout_height="312dp"
+        android:layout_marginTop="172dp"
+        android:autoLink="web|phone|email"
+        android:ellipsize="end"
+        android:scrollbars="horizontal|vertical"
+        android:text="@string/Email"
+        android:textColor="@color/Progresstextcolor"
+        android:textColorLink="@color/LinkColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
