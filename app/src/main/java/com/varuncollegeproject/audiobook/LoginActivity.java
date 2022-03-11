@@ -135,22 +135,23 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    public void LoginErrorDialog() {
-        AlertDialog.Builder dialog = new AlertDialog.Builder(LoginActivity.this);
-        dialog.setTitle(R.string.ADTitle);
-        dialog.setMessage(R.string.AlertDialogMSG).setCancelable(false)
-                .setIcon(R.drawable.wifioff)
-                .setPositiveButton(R.string.ADPositive, (dialog1, which) -> {
-//                    Open the Wireless Settings Page on the Phone (Wifi and Mobile Data)
-                    startActivity(new Intent(Settings.ACTION_WIRELESS_SETTINGS));
-                })
-                .setNegativeButton(R.string.ADNegative, (dialog12, which) -> Toast.makeText(getApplicationContext(), "Please Connect to Internet", Toast.LENGTH_SHORT).show())
-                .show();
+    public void ReleaseTTS() {
+        //        Release resources if audio tts is not speaking
+        if (!mTTS.isSpeaking()) {
+            mTTS.stop();
+        }
     }
+
 
     @Override
     protected void onStart() {
         super.onStart();
         CreateTTS();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ReleaseTTS();
     }
 }
