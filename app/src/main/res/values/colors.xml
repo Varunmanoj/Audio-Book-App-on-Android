@@ -36,6 +36,7 @@
     <color name="LinkColor">#030396</color>
     <color name="RegisterloginTextcolor">#000000</color>
 
-    <!--    Contact Activity -->
+    <!--    icons Colors-->
+    <color name="iconcolor">#000000</color>
 
 </resources>
