@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:title="@string/AppTheme">
+        <menu>
+            <item
+                android:id="@+id/SystemDefault"
+                android:checkable="false"
+                android:icon="@drawable/systemdefault"
+                android:title="@string/System"
+                app:showAsAction="withText" />
+            <item
+                android:id="@+id/light"
+                android:icon="@drawable/lightmode"
+                android:title="@string/Light"
+                app:showAsAction="withText" />
+            <item
+                android:id="@+id/Night"
+                android:icon="@drawable/nightmode"
+                android:title="@string/Night"
+                app:showAsAction="withText" />
+        </menu>
+    </item>
+</menu>
