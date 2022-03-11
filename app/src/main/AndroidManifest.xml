@@ -27,6 +27,7 @@
             android:exported="false"
             android:label="@string/ContactTitle"
             android:parentActivityName=".MainActivity" />
+
         <activity
             android:name=".Help"
             android:exported="false"
