@@ -11,6 +11,11 @@
     <string-array name="Book1ChaptersList">
         <item>Title</item>
         <item>Preface</item>
+        <item>Stave 1</item>
+        <item>Stave 2</item>
+        <item>Stave 3</item>
+        <item>Stave 4</item>
+        <item>Stave 5</item>
     </string-array>
 
     <string-array name="Book2ChaptersList">
@@ -24,8 +29,13 @@
     <string name="Book2">The Adventures of Pinocchio</string>
 
     <!--    Book1 Chapter Audio-->
-    <string name="Chapter1audio">Title</string>
-    <string name="Chapter2audio">Preface</string>
+    <string name="DCTitle">Title</string>
+    <string name="DCPreface">Preface</string>
+    <string name="DCStave2">Stave 1</string>
+    <string name="DCStave3">Stave 2</string>
+    <string name="DCStave4">Stave 3</string>
+    <string name="DCStave5">Stave 4</string>
+    <string name="DCStave1">Stave 5</string>
 
     <!--    Audio COntorls Desc-->
     <string name="PlayAudio">Play Audio</string>

@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
 //                Create List Items  clickable
             switch (position) {
                 case 0:
-
                     Intent nextscreanIntent = new Intent(MainActivity.this, Book1Chapters.class);
                     startActivity(nextscreanIntent);
                     break;

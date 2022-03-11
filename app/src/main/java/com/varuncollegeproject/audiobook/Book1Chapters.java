@@ -64,6 +64,10 @@ public class Book1Chapters extends AppCompatActivity {
                 case 1:
                     if (!CheckConection()) {
                         CreateDialog();
+                    } else {
+                        Vibrate();
+                        progressDialog.show();
+                        startActivity(new Intent(this, PlayerDCPreface.class));
                     }
                     break;
             }

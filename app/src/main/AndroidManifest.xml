@@ -21,13 +21,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AudioBook">
-
+        <activity
+            android:name=".PlayerDCPreface"
+            android:exported="false"
+            android:label="@string/DCPreface"
+            android:parentActivityName=".Book1Chapters"
+            android:screenOrientation="fullSensor" />
         <activity
             android:name=".Contactus"
             android:exported="false"
             android:label="@string/ContactTitle"
             android:parentActivityName=".MainActivity" />
-
         <activity
             android:name=".Help"
             android:exported="false"
@@ -50,7 +54,7 @@
         <activity
             android:name=".Player"
             android:exported="false"
-            android:label="@string/Chapter1audio"
+            android:label="@string/DCTitle"
             android:parentActivityName=".Book1Chapters" />
         <activity
             android:name=".MainActivity"
