@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.provider.Settings;
+import android.speech.tts.TextToSpeech;
 import android.util.Patterns;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,9 +20,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.Locale;
+
 public class ForgotPasswordActivity extends AppCompatActivity {
     EditText etemail;
     Button Resetpassbtn;
+    TextToSpeech mTTS;
+
     FirebaseAuth auth;
 
     @Override
@@ -48,17 +53,21 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         String email = etemail.getText().toString();
         if (email.isEmpty()) {
             etemail.setError(getText(R.string.FPEmailerror));
+            mTTS.speak(getText(R.string.FPEmailerror), TextToSpeech.QUEUE_FLUSH, null, null);
             etemail.requestFocus();
         } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            etemail.setError(getText(R.string.FPEmailerror));
+            etemail.setError(getString(R.string.FPvalidemailerror));
+            mTTS.speak(getText(R.string.FPvalidemailerror), TextToSpeech.QUEUE_FLUSH, null, null);
             etemail.requestFocus();
         } else {
             auth.sendPasswordResetEmail(email).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
                     Toast.makeText(ForgotPasswordActivity.this, R.string.CheckEmail, Toast.LENGTH_SHORT).show();
+                    mTTS.speak(getText(R.string.CheckEmail), TextToSpeech.QUEUE_FLUSH, null, null);
                     startActivity(new Intent(this, LoginActivity.class));
                 } else {
                     Toast.makeText(ForgotPasswordActivity.this, R.string.Tryagain, Toast.LENGTH_SHORT).show();
+                    mTTS.speak(getText(R.string.Tryagain), TextToSpeech.QUEUE_FLUSH, null, null);
                 }
             });
         }
@@ -102,4 +111,34 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                 .show();
     }
 
+    public void CreateTTS() {
+//       Make the app self voicing
+
+        mTTS = new TextToSpeech(this, status -> {
+            if (status == TextToSpeech.SUCCESS) {
+                mTTS.setLanguage(Locale.ENGLISH);
+            }
+//
+        });
+    }
+
+    public void ReleaseTTS() {
+        //        Release resources if audio tts is not speaking
+        if (!mTTS.isSpeaking()) {
+            mTTS.stop();
+        }
+    }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        CreateTTS();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ReleaseTTS();
+    }
 }

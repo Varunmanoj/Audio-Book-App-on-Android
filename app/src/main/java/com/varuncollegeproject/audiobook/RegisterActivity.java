@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.provider.Settings;
+import android.speech.tts.TextToSpeech;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.Locale;
 import java.util.Objects;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -26,6 +28,7 @@ public class RegisterActivity extends AppCompatActivity {
     TextInputEditText etRegPassword;
     TextView tvLoginHere;
     Button btnRegister;
+    TextToSpeech mTTS;
 
     FirebaseAuth mAuth;
 
@@ -51,6 +54,7 @@ public class RegisterActivity extends AppCompatActivity {
         });
 
         tvLoginHere.setOnClickListener(view -> {
+            Vibrate();
             startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
         });
     }
@@ -61,17 +65,21 @@ public class RegisterActivity extends AppCompatActivity {
 
         if (email.isEmpty()) {
             etRegEmail.setError(getText(R.string.EmailError));
+            mTTS.speak(getText(R.string.EmailError), TextToSpeech.QUEUE_FLUSH, null, null);
             etRegEmail.requestFocus();
         } else if (password.isEmpty()) {
             etRegPassword.setError(getText(R.string.PasswordError));
+            mTTS.speak(getText(R.string.PasswordError), TextToSpeech.QUEUE_FLUSH, null, null);
             etRegPassword.requestFocus();
         } else {
             mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
                     Toast.makeText(RegisterActivity.this, "User registered successfully", Toast.LENGTH_SHORT).show();
+                    mTTS.speak("User registered successfully", TextToSpeech.QUEUE_FLUSH, null, null);
                     startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                 } else {
                     Toast.makeText(RegisterActivity.this, "Registration Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    mTTS.speak("Registration Error:" + task.getException().getMessage(), TextToSpeech.QUEUE_FLUSH, null, null);
                 }
             });
         }
@@ -117,4 +125,34 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
+    public void CreateTTS() {
+//       Make the app self voicing
+
+        mTTS = new TextToSpeech(this, status -> {
+            if (status == TextToSpeech.SUCCESS) {
+                mTTS.setLanguage(Locale.ENGLISH);
+            }
+//
+        });
+    }
+
+    public void ReleaseTTS() {
+        //        Release resources if audio tts is not speaking
+        if (!mTTS.isSpeaking()) {
+            mTTS.stop();
+        }
+    }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        CreateTTS();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ReleaseTTS();
+    }
 }
