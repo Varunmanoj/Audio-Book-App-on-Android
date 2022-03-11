@@ -16,6 +16,7 @@
         <item>Stave 3</item>
         <item>Stave 4</item>
         <item>Stave 5</item>
+        <item>Copyright info </item>
     </string-array>
 
     <string-array name="Book2ChaptersList">
@@ -36,6 +37,7 @@
     <string name="DCStave3">Stave 3</string>
     <string name="DCStave4">Stave 4</string>
     <string name="DCStave5">Stave 5</string>
+    <string name="DCCoppyRight">Copy Right Info</string>
 
     <!--    Audio COntorls Desc-->
     <string name="PlayAudio">Play Audio</string>

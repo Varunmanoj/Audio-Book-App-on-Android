@@ -80,6 +80,51 @@ public class Book1Chapters extends AppCompatActivity {
                         startActivity(new Intent(this, DCStave1.class));
                     }
                     break;
+                case 3:
+                    if (!CheckConection()) {
+                        CreateDialog();
+                    } else {
+                        Vibrate();
+                        progressDialog.show();
+                        startActivity(new Intent(this, DCStave2.class));
+                    }
+                    break;
+                case 4:
+                    if (!CheckConection()) {
+                        CreateDialog();
+                    } else {
+                        Vibrate();
+                        progressDialog.show();
+                        startActivity(new Intent(this, DCStave3.class));
+                    }
+                    break;
+                case 5:
+                    if (!CheckConection()) {
+                        CreateDialog();
+                    } else {
+                        Vibrate();
+                        progressDialog.show();
+                        startActivity(new Intent(this, DCStave4.class));
+                    }
+                    break;
+                case 6:
+                    if (!CheckConection()) {
+                        CreateDialog();
+                    } else {
+                        Vibrate();
+                        progressDialog.show();
+                        startActivity(new Intent(this, DCStave5.class));
+                    }
+                    break;
+                case 7:
+                    if (!CheckConection()) {
+                        CreateDialog();
+                    } else {
+                        Vibrate();
+                        progressDialog.show();
+                        startActivity(new Intent(this, DCCoppyright.class));
+                    }
+                    break;
             }
         });
     }

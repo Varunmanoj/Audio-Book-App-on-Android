@@ -22,6 +22,36 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AudioBook">
         <activity
+            android:name=".DCCoppyright"
+            android:exported="false"
+            android:label="@string/DCCoppyRight"
+            android:parentActivityName=".Book1Chapters"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DCStave5"
+            android:exported="false"
+            android:label="@string/DCStave5"
+            android:parentActivityName=".Book1Chapters"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DCStave4"
+            android:exported="false"
+            android:label="@string/DCStave4"
+            android:parentActivityName=".Book1Chapters"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DCStave3"
+            android:exported="false"
+            android:label="@string/DCStave3"
+            android:parentActivityName=".Book1Chapters"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DCStave2"
+            android:exported="false"
+            android:label="@string/DCStave2"
+            android:parentActivityName=".Book1Chapters"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".DCStave1"
             android:exported="false"
             android:label="@string/DCStave1"
