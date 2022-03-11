@@ -26,7 +26,7 @@
             android:exported="false"
             android:label="@string/DCPreface"
             android:parentActivityName=".Book1Chapters"
-            android:screenOrientation="fullSensor" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Contactus"
             android:exported="false"
