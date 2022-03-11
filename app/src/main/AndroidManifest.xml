@@ -22,6 +22,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AudioBook">
         <activity
+            android:name=".DCStave1"
+            android:exported="false"
+            android:label="@string/DCStave1"
+            android:parentActivityName=".Book1Chapters"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".PlayerDCPreface"
             android:exported="false"
             android:label="@string/DCPreface"

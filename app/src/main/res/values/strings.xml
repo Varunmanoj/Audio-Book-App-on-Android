@@ -31,11 +31,11 @@
     <!--    Book1 Chapter Audio-->
     <string name="DCTitle">Title</string>
     <string name="DCPreface">Preface</string>
-    <string name="DCStave2">Stave 1</string>
-    <string name="DCStave3">Stave 2</string>
-    <string name="DCStave4">Stave 3</string>
-    <string name="DCStave5">Stave 4</string>
-    <string name="DCStave1">Stave 5</string>
+    <string name="DCStave1">Stave 1</string>
+    <string name="DCStave2">Stave 2</string>
+    <string name="DCStave3">Stave 3</string>
+    <string name="DCStave4">Stave 4</string>
+    <string name="DCStave5">Stave 5</string>
 
     <!--    Audio COntorls Desc-->
     <string name="PlayAudio">Play Audio</string>

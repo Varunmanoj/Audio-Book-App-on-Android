@@ -70,6 +70,16 @@ public class Book1Chapters extends AppCompatActivity {
                         startActivity(new Intent(this, PlayerDCPreface.class));
                     }
                     break;
+
+                case 2:
+                    if (!CheckConection()) {
+                        CreateDialog();
+                    } else {
+                        Vibrate();
+                        progressDialog.show();
+                        startActivity(new Intent(this, DCStave1.class));
+                    }
+                    break;
             }
         });
     }
