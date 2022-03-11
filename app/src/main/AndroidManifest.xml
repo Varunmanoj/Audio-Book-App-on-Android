@@ -21,11 +21,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AudioBook">
-        <activity
-            android:name=".DCTitle"
-            android:exported="false"
-            android:label="@string/Transcripttitle"
-            android:parentActivityName=".Player" />
 
         <activity
             android:name=".Contactus"
@@ -40,7 +35,9 @@
         <activity
             android:name=".ForgotPasswordActivity"
             android:exported="false"
-            android:label="@string/ForgotPass" />
+            android:label="@string/ForgotPass"
+            android:parentActivityName=".LoginActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LoginActivity"
             android:exported="false"
