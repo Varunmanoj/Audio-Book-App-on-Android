@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.provider.Settings;
+import android.speech.tts.TextToSpeech;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.Locale;
 import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity {
@@ -28,6 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     Button btnLogin;
     TextView FP;
     FirebaseAuth mAuth;
+    TextToSpeech mTTS;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,17 +66,21 @@ public class LoginActivity extends AppCompatActivity {
 
         if (email.isEmpty()) {
             etLoginEmail.setError(getText(R.string.LoginEmailError));
+            mTTS.speak(getText(R.string.LoginEmailError), TextToSpeech.QUEUE_FLUSH, null, null);
             etLoginEmail.requestFocus();
         } else if (password.isEmpty()) {
             etLoginPassword.setError(getText(R.string.LoginPassworderror));
+            mTTS.speak(getText(R.string.LoginPassworderror), TextToSpeech.QUEUE_FLUSH, null, null);
             etLoginPassword.requestFocus();
         } else {
             mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
                     Toast.makeText(LoginActivity.this, "User logged in successfully", Toast.LENGTH_SHORT).show();
+                    mTTS.speak("User logged in successfully", TextToSpeech.QUEUE_FLUSH, null, null);
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 } else {
                     Toast.makeText(LoginActivity.this, "Log in Error: " + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
+                    mTTS.speak("Log in Error: " + Objects.requireNonNull(task.getException()).getMessage(), TextToSpeech.QUEUE_FLUSH, null, null);
                 }
             });
         }
@@ -115,5 +122,35 @@ public class LoginActivity extends AppCompatActivity {
 //    Perform for API 26 and below
             vibrator.vibrate(200);
         }
+    }
+
+    public void CreateTTS() {
+//       Make the app self voicing
+
+        mTTS = new TextToSpeech(this, status -> {
+            if (status == TextToSpeech.SUCCESS) {
+                mTTS.setLanguage(Locale.ENGLISH);
+            }
+//
+        });
+    }
+
+    public void LoginErrorDialog() {
+        AlertDialog.Builder dialog = new AlertDialog.Builder(LoginActivity.this);
+        dialog.setTitle(R.string.ADTitle);
+        dialog.setMessage(R.string.AlertDialogMSG).setCancelable(false)
+                .setIcon(R.drawable.wifioff)
+                .setPositiveButton(R.string.ADPositive, (dialog1, which) -> {
+//                    Open the Wireless Settings Page on the Phone (Wifi and Mobile Data)
+                    startActivity(new Intent(Settings.ACTION_WIRELESS_SETTINGS));
+                })
+                .setNegativeButton(R.string.ADNegative, (dialog12, which) -> Toast.makeText(getApplicationContext(), "Please Connect to Internet", Toast.LENGTH_SHORT).show())
+                .show();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        CreateTTS();
     }
 }
