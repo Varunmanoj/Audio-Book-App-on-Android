@@ -22,6 +22,72 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AudioBook">
         <activity
+            android:name=".pchap10"
+            android:exported="false"
+            android:label="@string/PChapt10"
+            android:parentActivityName=".Book2ChapterList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".pchap9"
+            android:exported="false"
+            android:label="@string/PChapt9"
+            android:parentActivityName=".Book2ChapterList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".pchap8"
+            android:exported="false"
+            android:label="@string/PChapt8"
+            android:parentActivityName=".Book2ChapterList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".pchap7"
+            android:exported="false"
+            android:label="@string/PChapt7"
+            android:parentActivityName=".Book2ChapterList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".pchap6"
+            android:exported="false"
+            android:label="@string/PChapt6"
+            android:parentActivityName=".Book2ChapterList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".pchap5"
+            android:exported="false"
+            android:label="@string/PChapt5"
+            android:parentActivityName=".Book2ChapterList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".pchap4"
+            android:exported="false"
+            android:label="@string/PChapt4"
+            android:parentActivityName=".Book2ChapterList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".pchap3"
+            android:exported="false"
+            android:label="@string/PChapt3"
+            android:parentActivityName=".Book2ChapterList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".pchap2"
+            android:exported="false"
+            android:label="@string/PPChapt2"
+            android:parentActivityName=".Book2ChapterList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Pchap1"
+            android:exported="false"
+            android:label="@string/PChapt1"
+            android:parentActivityName=".Book2ChapterList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Ptitle"
+            android:exported="false"
+            android:label="@string/PTitle"
+            android:parentActivityName=".Book2ChapterList"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".DCCoppyright"
             android:exported="false"
             android:label="@string/DCCoppyRight"

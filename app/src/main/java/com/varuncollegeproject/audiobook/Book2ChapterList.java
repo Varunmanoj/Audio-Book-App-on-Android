@@ -1,12 +1,20 @@
 package com.varuncollegeproject.audiobook;
 
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
+import android.provider.Settings;
 import android.speech.tts.TextToSpeech;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Locale;
@@ -16,6 +24,7 @@ public class Book2ChapterList extends AppCompatActivity {
     //For TTS
     String ReadText;
     TextToSpeech mTTS;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +35,10 @@ public class Book2ChapterList extends AppCompatActivity {
         Book2ChapterList = findViewById(R.id.Book2ChapterList);
         Book2ChapterList.setOnItemClickListener((parent, view, position, id) -> {
 
+            progressDialog = new ProgressDialog(this);
+            progressDialog.setTitle(getString(R.string.ProgressTitle));
+            progressDialog.setMessage(getString(R.string.ProgressMSG));
+
             //            Extract the text selected  by user in string
             ReadText = Book2ChapterList.getItemAtPosition(position).toString();
             SpeakSelection();
@@ -34,12 +47,15 @@ public class Book2ChapterList extends AppCompatActivity {
 //Click event for List Item
             switch (position) {
                 case 0:
-
-                    break;
-                case 1:
-
+                    if (!CheckConection()) {
+                        CreateDialog();
+                    } else {
+                        progressDialog.show();
+                        startActivity(new Intent(this, Ptitle.class));
+                    }
                     break;
             }
+
         });
     }
 
@@ -83,6 +99,31 @@ public class Book2ChapterList extends AppCompatActivity {
             }
         });
     }
+
+    private void CreateDialog() {
+        AlertDialog.Builder dialog = new AlertDialog.Builder(Book2ChapterList.this);
+        dialog.setTitle(R.string.ADTitle);
+        dialog.setMessage(R.string.AlertDialogMSG).setCancelable(false)
+                .setIcon(R.drawable.wifioff)
+                .setPositiveButton(R.string.ADPositive, (dialog1, which) -> {
+//                    Open the Wireless Settings Page on the Phone (Wifi and Mobile Data)
+                    startActivity(new Intent(Settings.ACTION_WIRELESS_SETTINGS));
+                })
+                .setNegativeButton(R.string.ADNegative, (dialog12, which) -> Toast.makeText(getApplicationContext(), "Please Connect to Internet", Toast.LENGTH_SHORT).show())
+                .show();
+    }
+
+    public Boolean CheckConection() {
+//        ConnectivityManager is used to check if phone is conected to Internet or not
+        ConnectivityManager connectivityManager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+
+//        NetworkInfo is used to check if phone is Connected to either WIFI or Mobile Data
+        NetworkInfo Wifistate = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+        NetworkInfo MobileState = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+
+        return ((Wifistate != null) && (Wifistate.isConnected())) || (MobileState != null) && MobileState.isConnected();
+    }
+
 
     @Override
     protected void onStop() {
