@@ -65,8 +65,8 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void createUser() {
-        String email = Objects.requireNonNull(etRegEmail.getText()).toString();
-        String password = Objects.requireNonNull(etRegPassword.getText()).toString();
+        String email = Objects.requireNonNull(etRegEmail.getText()).toString().trim();
+        String password = Objects.requireNonNull(etRegPassword.getText()).toString().trim();
 
         if (email.isEmpty()) {
             etRegEmail.setError(getText(R.string.EmailError));

@@ -66,8 +66,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void loginUser() {
-        String email = Objects.requireNonNull(etLoginEmail.getText()).toString();
-        String password = Objects.requireNonNull(etLoginPassword.getText()).toString();
+        String email = Objects.requireNonNull(etLoginEmail.getText()).toString().trim();
+        String password = Objects.requireNonNull(etLoginPassword.getText()).toString().trim();
 
         if (email.isEmpty()) {
             etLoginEmail.setError(getText(R.string.LoginEmailError));
