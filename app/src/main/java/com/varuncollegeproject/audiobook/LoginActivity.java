@@ -57,7 +57,10 @@ public class LoginActivity extends AppCompatActivity {
                 loginUser();
             }
         });
-        tvRegisterHere.setOnClickListener(view -> startActivity(new Intent(LoginActivity.this, RegisterActivity.class)));
+        tvRegisterHere.setOnClickListener(view -> {
+            Vibrate();
+            startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+        });
 
         FP.setOnClickListener(v -> {
             Vibrate();

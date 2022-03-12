@@ -50,7 +50,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
     }
 
     private void Resetpassword() {
-        String email = etemail.getText().toString();
+        String email = etemail.getText().toString().trim();
         if (email.isEmpty()) {
             etemail.setError(getText(R.string.FPEmailerror));
             mTTS.speak(getText(R.string.FPEmailerror), TextToSpeech.QUEUE_FLUSH, null, null);
