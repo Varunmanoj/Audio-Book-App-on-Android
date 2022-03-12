@@ -40,4 +40,10 @@
                 app:showAsAction="withText" />
         </menu>
     </item>
+    <item
+        android:id="@+id/tts"
+        android:contentDescription="@string/OpenTTSSettingsiconDSC"
+        android:icon="@drawable/ttssettings"
+        android:title="@string/TTSSettings"
+        app:showAsAction="ifRoom" />
 </menu>

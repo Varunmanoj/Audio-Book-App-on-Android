@@ -165,6 +165,14 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
+    public void openTTSSettings() {
+        //Open Android Text-To-Speech Settings
+        Intent intent = new Intent();
+        intent.setAction("com.android.settings.TTS_SETTINGS");
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
+
     @Override
     protected void onStop() {
         super.onStop();
@@ -239,6 +247,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.contactus:
                 Vibrate();
                 startActivity(new Intent(this, Contactus.class));
+            case R.id.tts:
+                Vibrate();
+                openTTSSettings();
         }
         return super.onOptionsItemSelected(item);
     }

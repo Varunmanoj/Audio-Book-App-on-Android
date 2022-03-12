@@ -147,6 +147,14 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+    public void openTTSSettings() {
+        //Open Android Text-To-Speech Settings
+        Intent intent = new Intent();
+        intent.setAction("com.android.settings.TTS_SETTINGS");
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
+
 
     @Override
     protected void onStart() {
@@ -189,6 +197,9 @@ public class LoginActivity extends AppCompatActivity {
                 Vibrate();
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
                 break;
+            case R.id.tts:
+                Vibrate();
+                openTTSSettings();
         }
         return super.onOptionsItemSelected(item);
     }

@@ -95,7 +95,7 @@
     <string name="LoginPasswordHint">Password</string>
     <string name="LoginBTN">Login</string>
     <string name="NewUser">Not registered yet?</string>
-    <string name="RegisterHere">Register Nere</string>
+    <string name="RegisterHere">Register Here</string>
     <string name="ForgotPass">Forgot Password</string>
     <string name="LoginEmailError">Email cannot be empty</string>
     <string name="LoginPassworderror">Password cannot be empty</string>
@@ -122,6 +122,8 @@
     <string name="LogoutConfermTitle">Confirm Logout?</string>
     <string name="LogoutConfermMSG">Are you sure you want to logout</string>
     <string name="LogoutSuss">You have logout from the app</string>
+    <string name="TTSSettings">Text to Speech Settings</string>
+    <string name="OpenTTSSettingsiconDSC">Open the Text to Speech Settings</string>
 
 
     <!--    Contact us -->
