@@ -122,6 +122,7 @@
                     android:layout_marginStart="8dp"
                     android:focusable="auto"
                     android:scrollHorizontally="true"
+                    android:soundEffectsEnabled="true"
                     android:text="@string/RegisterHere"
                     android:textColor="@color/LinkColor"
                     android:textSize="24sp"
