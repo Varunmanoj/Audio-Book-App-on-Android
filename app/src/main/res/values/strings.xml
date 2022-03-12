@@ -23,6 +23,14 @@
         <item>Chapter 1</item>
         <item>Chapter 2</item>
         <item>Chapter 3</item>
+        <item>Chapter 4</item>
+        <item>Chapter 5</item>
+        <item>Chapter 6</item>
+        <item>Chapter 7</item>
+        <item>Chapter 8</item>
+        <item>Chapter 9</item>
+        <item>Chapter 10</item>
+
     </string-array>
 
     <!--    Action Bar Title text-->
@@ -38,6 +46,20 @@
     <string name="DCStave4">Stave 4</string>
     <string name="DCStave5">Stave 5</string>
     <string name="DCCoppyRight">Copy Right Info</string>
+
+    <!--    Book 2 Pinocchio-->
+    <string name="PTitle">Title</string>
+    <string name="PChapt1">Chapter 1</string>
+    <string name="PPChapt2">Chapter 2</string>
+    <string name="PChapt3">Chapter 3</string>
+    <string name="PChapt4">Chapter 4</string>
+    <string name="PChapt5">Chapter 5</string>
+    <string name="PChapt6">hapter 6</string>
+    <string name="PChapt7">Chapter 7</string>
+    <string name="PChapt8">Chapter 8</string>
+    <string name="PChapt9">Chapter 9</string>
+    <string name="PChapt10">Chapter 10</string>
+
 
     <!--    Audio COntorls Desc-->
     <string name="PlayAudio">Play Audio</string>

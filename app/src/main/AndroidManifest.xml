@@ -82,11 +82,13 @@
         <activity
             android:name=".LoginActivity"
             android:exported="false"
-            android:label="@string/LoginScreenTitle" />
+            android:label="@string/LoginScreenTitle"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".RegisterActivity"
             android:exported="false"
-            android:label="@string/RegisterScreenTitle" />
+            android:label="@string/RegisterScreenTitle"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Player"
             android:exported="false"
