@@ -20,6 +20,7 @@
     </string-array>
 
     <string-array name="Book2ChaptersList">
+        <item>Title</item>
         <item>Chapter 1</item>
         <item>Chapter 2</item>
         <item>Chapter 3</item>

@@ -54,6 +54,86 @@ public class Book2ChapterList extends AppCompatActivity {
                         startActivity(new Intent(this, Ptitle.class));
                     }
                     break;
+                case 1:
+                    if (!CheckConection()) {
+                        CreateDialog();
+                    } else {
+                        progressDialog.show();
+                        startActivity(new Intent(this, Pchap1.class));
+                    }
+                    break;
+                case 2:
+                    if (!CheckConection()) {
+                        CreateDialog();
+                    } else {
+                        progressDialog.show();
+                        startActivity(new Intent(this, pchap2.class));
+                    }
+                    break;
+                case 3:
+                    if (!CheckConection()) {
+                        CreateDialog();
+                    } else {
+                        progressDialog.show();
+                        startActivity(new Intent(this, pchap3.class));
+                    }
+                    break;
+                case 4:
+                    if (!CheckConection()) {
+                        CreateDialog();
+                    } else {
+                        progressDialog.show();
+                        startActivity(new Intent(this, pchap4.class));
+                    }
+                    break;
+                case 5:
+                    if (!CheckConection()) {
+                        CreateDialog();
+                    } else {
+                        progressDialog.show();
+                        startActivity(new Intent(this, pchap5.class));
+                    }
+                    break;
+                case 6:
+                    if (!CheckConection()) {
+                        CreateDialog();
+                    } else {
+                        progressDialog.show();
+                        startActivity(new Intent(this, pchap6.class));
+                    }
+                    break;
+                case 7:
+                    if (!CheckConection()) {
+                        CreateDialog();
+                    } else {
+                        progressDialog.show();
+                        startActivity(new Intent(this, pchap7.class));
+                    }
+                    break;
+                case 8:
+                    if (!CheckConection()) {
+                        CreateDialog();
+                    } else {
+                        progressDialog.show();
+                        startActivity(new Intent(this, pchap8.class));
+                    }
+                    break;
+                case 9:
+                    if (!CheckConection()) {
+                        CreateDialog();
+                    } else {
+                        progressDialog.show();
+                        startActivity(new Intent(this, pchap9.class));
+                    }
+                    break;
+                case 10:
+                    if (!CheckConection()) {
+                        CreateDialog();
+                    } else {
+                        progressDialog.show();
+                        startActivity(new Intent(this, pchap10.class));
+                    }
+                    break;
             }
 
         });
