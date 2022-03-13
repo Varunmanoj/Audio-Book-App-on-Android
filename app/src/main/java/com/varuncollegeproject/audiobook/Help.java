@@ -18,8 +18,8 @@ public class Help extends AppCompatActivity {
         Web = findViewById(R.id.webview);
         webSettings = Web.getSettings();
 
-//        Oppen the Github Readme Linkin the App
-        String URL = "https://github.com/VarunKumar-Xaviers/Audio-Book-App-on-Android/blob/a668566c59dea91fa3ed4ee92f37fdc8fe7b909e/README.md";
+        // Open Related Website
+        String URL = "https://hereme.azurewebsites.net/";
         Web.loadUrl(URL);
     }
 }
