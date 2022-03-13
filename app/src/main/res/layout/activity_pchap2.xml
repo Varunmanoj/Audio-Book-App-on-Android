@@ -12,7 +12,7 @@
         android:layout_width="298dp"
         android:layout_height="309dp"
         android:contentDescription="@string/Book2"
-        android:src="@drawable/Pinocchio"
+        android:src="@drawable/pinocchio"
         app:civ_border_color="@color/white"
         app:civ_border_width="6dp"
         app:layout_constraintBottom_toTopOf="@+id/seekBar"
