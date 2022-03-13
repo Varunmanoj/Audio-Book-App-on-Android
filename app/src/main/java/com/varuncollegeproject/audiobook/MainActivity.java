@@ -247,6 +247,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.contactus:
                 Vibrate();
                 startActivity(new Intent(this, Contactus.class));
+                break;
             case R.id.tts:
                 Vibrate();
                 openTTSSettings();

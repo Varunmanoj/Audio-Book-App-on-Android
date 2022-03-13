@@ -136,7 +136,7 @@
 
     <!--     Main options Menu -->
     <string name="Logout">logout</string>
-    <string name="help">Help and Support</string>
+    <string name="help">Website</string>
     <string name="Contact">Contact us</string>
     <string name="AppTheme">App Theme</string>
     <string name="Light">Light</string>
@@ -149,10 +149,11 @@
     <string name="OpenTTSSettingsiconDSC">Open the Text to Speech Settings</string>
 
 
+    <!--    Help and Support-->
+    <string name="helpTitle">Website</string>
+
     <!--    Contact us -->
     <string name="ContactTitle">Contact us</string>
-    <!--    Help and Support-->
-    <string name="helpTitle">Help and Support</string>
     <string name="TextDetails">This app has been made as a part of the Android project for SY-BSC-IT. This app ahs been made by Varun Manoj Kumar, Salvin Suraj and Ankit Prakash.</string>
     <string name="Email">Varun E-mail: varun.kumar@xaviers.edu.in \n
     Salvin EMail: salvin.thomas@xaviers.edu.in \n
