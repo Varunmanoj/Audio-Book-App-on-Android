@@ -9,7 +9,9 @@
         <intent>
             <action android:name="android.intent.action.TTS_SERVICE" />
         </intent>
-    </queries> <!-- Vibrate Permission -->
+    </queries>
+
+    <!-- Vibrate Permission -->
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
