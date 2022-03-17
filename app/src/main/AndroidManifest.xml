@@ -5,6 +5,7 @@
 
     <dist:module dist:instant="true" />
 
+    <!--Text to Speech Permission -->
     <queries>
         <intent>
             <action android:name="android.intent.action.TTS_SERVICE" />
@@ -13,6 +14,8 @@
 
     <!-- Vibrate Permission -->
     <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!--    internet Permission-->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
