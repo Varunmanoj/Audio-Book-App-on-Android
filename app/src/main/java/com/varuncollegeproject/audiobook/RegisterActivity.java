@@ -83,18 +83,22 @@ public class RegisterActivity extends AppCompatActivity {
                     mTTS.speak("User registered successfully", TextToSpeech.QUEUE_FLUSH, null, null);
                     startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                 } else {
-                    Toast.makeText(RegisterActivity.this, "Registration Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                    mTTS.speak("Registration Error:" + task.getException().getMessage(), TextToSpeech.QUEUE_FLUSH, null, null);
+                    Toast.makeText(RegisterActivity.this, "Registration Error: " + task.getException().getMessage(),
+                            Toast.LENGTH_SHORT).show();
+                    mTTS.speak("Registration Error:" + task.getException().getMessage(), TextToSpeech.QUEUE_FLUSH, null,
+                            null);
                 }
             });
         }
     }
 
     public Boolean CheckConection() {
-//        ConnectivityManager is used to check if phone is conected to Internet or not
-        ConnectivityManager connectivityManager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        // ConnectivityManager is used to check if phone is conected to Internet or not
+        ConnectivityManager connectivityManager = (ConnectivityManager) getApplicationContext()
+                .getSystemService(Context.CONNECTIVITY_SERVICE);
 
-//        NetworkInfo is used to check if phone is Connected to either WIFI or Mobile Data
+        // NetworkInfo is used to check if phone is Connected to either WIFI or Mobile
+        // Data
         NetworkInfo Wifistate = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
         NetworkInfo MobileState = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
 
@@ -107,47 +111,48 @@ public class RegisterActivity extends AppCompatActivity {
         dialog.setMessage(R.string.AlertDialogMSG).setCancelable(false)
                 .setIcon(R.drawable.wifioff)
                 .setPositiveButton(R.string.ADPositive, (dialog1, which) -> {
-//                    Open the Wireless Settings Page on the Phone (Wifi and Mobile Data)
+                    // Open the Wireless Settings Page on the Phone (Wifi and Mobile Data)
                     startActivity(new Intent(Settings.ACTION_WIRELESS_SETTINGS));
                 })
-                .setNegativeButton(R.string.ADNegative, (dialog12, which) -> Toast.makeText(getApplicationContext(), "Please Connect to Internet", Toast.LENGTH_SHORT).show())
+                .setNegativeButton(R.string.ADNegative,
+                        (dialog12,
+                         which) -> Toast.makeText(getApplicationContext(), "Please Connect to Internet",
+                                Toast.LENGTH_SHORT).show())
                 .show();
-
 
     }
 
     public void Vibrate() {
 
-        //Vibrate on click
+        // Vibrate on click
         Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
 
         if (Build.VERSION.SDK_INT >= 26) {
-//    Perform forAPI  26 and above
+            // Perform forAPI 26 and above
             vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE));
         } else {
-//    Perform for API 26 and below
+            // Perform for API 26 and below
             vibrator.vibrate(200);
         }
     }
 
     public void CreateTTS() {
-//       Make the app self voicing
+        // Make the app self voicing
 
         mTTS = new TextToSpeech(this, status -> {
             if (status == TextToSpeech.SUCCESS) {
                 mTTS.setLanguage(Locale.ENGLISH);
             }
-//
+            //
         });
     }
 
     public void ReleaseTTS() {
-        //        Release resources if audio tts is not speaking
+        // Release resources if audio tts is not speaking
         if (!mTTS.isSpeaking()) {
             mTTS.stop();
         }
     }
-
 
     @Override
     protected void onStart() {
@@ -161,7 +166,7 @@ public class RegisterActivity extends AppCompatActivity {
         ReleaseTTS();
     }
 
-    //    options menu
+    // options menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -172,18 +177,18 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-//        Read out the selected option
+        // Read out the selected option
         String ReadMoreoptionsMenu = item.getTitle().toString();
         mTTS.speak(ReadMoreoptionsMenu, TextToSpeech.QUEUE_FLUSH, null, null);
         switch (item.getItemId()) {
             case R.id.light:
                 Vibrate();
-//                switch to Light Mode
+                // switch to Light Mode
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                 break;
             case R.id.Night:
                 Vibrate();
-//                switch to Dark Mode
+                // switch to Dark Mode
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                 break;
             case R.id.SystemDefault:
