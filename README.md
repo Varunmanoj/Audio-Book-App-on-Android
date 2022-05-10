@@ -20,4 +20,4 @@ HearMe is a simple AudioBook app with some amazing features. It is user-friendly
 [Download APK](https://github.com/VarunKumar-Xaviers/Audio-Book-App-on-Android/releases/download/V4.6/Audio.Book.V4.6.apk)
 
 ## Website URL 
-[HereMe-Listen to Enjoy Listen to Learn](https://hereme.azurewebsites.net/)
+[HereMe-Listen to Enjoy Listen to Learn](https://here-me-audio-book.web.app/)
