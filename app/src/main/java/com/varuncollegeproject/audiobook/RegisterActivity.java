@@ -166,6 +166,13 @@ public class RegisterActivity extends AppCompatActivity {
         ReleaseTTS();
     }
 
+    public void openTTSSettings() {
+        //Open Android Text-To-Speech Settings
+        Intent intent = new Intent();
+        intent.setAction("com.android.settings.TTS_SETTINGS");
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
     // options menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -180,22 +187,23 @@ public class RegisterActivity extends AppCompatActivity {
         // Read out the selected option
         String ReadMoreoptionsMenu = item.getTitle().toString();
         mTTS.speak(ReadMoreoptionsMenu, TextToSpeech.QUEUE_FLUSH, null, null);
-        switch (item.getItemId()) {
-            case R.id.light:
-                Vibrate();
-                // switch to Light Mode
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                break;
-            case R.id.Night:
-                Vibrate();
-                // switch to Dark Mode
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                break;
-            case R.id.SystemDefault:
-                Vibrate();
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
-                break;
+
+        if (item.getItemId() == R.id.light) {
+            Vibrate();
+            // switch to Light Mode
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        } else if (item.getItemId() == R.id.Night) {
+            Vibrate();
+            // switch to Dark Mode
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else if (item.getItemId() == R.id.SystemDefault) {
+            Vibrate();
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+        } else if (item.getItemId() == R.id.tts) {
+            Vibrate();
+            openTTSSettings();
         }
+
         return super.onOptionsItemSelected(item);
     }
 }
